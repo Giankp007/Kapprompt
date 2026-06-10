@@ -1,61 +1,73 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="de-CH">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Datenschutz — KapPrompt</title>
-<link rel="icon" type="image/svg+xml" href="favicon.svg">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Space+Mono:wght@400;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Datenschutz — KapPrompt</title>
+  <meta name="robots" content="noindex">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<canvas id="particleCanvas"></canvas>
-<div class="bg-blobs">
-  <div class="blob blob-1"></div>
-  <div class="blob blob-2"></div>
-</div>
-<nav id="mainNav">
-  <a href="index.html" class="logo-link">
-    <img src="logo.png" alt="KapPrompt" class="logo-img">
-    <div class="logo"><span class="kap">Kap</span><span class="prompt">Prompt</span></div>
-  </a>
-  <div class="nav-links">
-    <a href="index.html#services">Services</a>
-    <a href="index.html#pricing">Pakete</a>
-    <a href="index.html#contact" class="nav-cta">Kontakt</a>
-  </div>
-</nav>
-<div class="legal-page">
-  <h1>Datenschutzerklärung</h1>
-  <h2>1. Allgemeine Hinweise</h2>
-  <p>Der Schutz deiner persönlichen Daten ist uns wichtig. Diese Datenschutzerklärung informiert dich über die Art, den Umfang und den Zweck der Verarbeitung von personenbezogenen Daten auf kapprompt.ch.</p>
-  <p>Verantwortlich:
-     Gian Kappeler, Mettlenstrasse 19 9523 Züberwangen, St. Gallen, CH Schweiz, E-Mail: <a href="mailto:gian@kapprompt.ch">gian@kapprompt.ch</a></p>
-  <h2>2. Erhebung und Speicherung personenbezogener Daten</h2>
-  <p>Beim Besuch unserer Website werden automatisch durch den Hosting-Provider Server-Logfiles erhoben (besuchte Seite, Datum/Uhrzeit, Browsertyp, Betriebssystem, Referrer URL, IP-Adresse). Eine Zuordnung zu bestimmten Personen findet nicht statt.</p>
-  <h2>3. Kontaktformular und E-Mail</h2>
-  <p>Wenn du unser Kontaktformular nutzt oder uns per E-Mail kontaktierst, werden die übermittelten Daten (Name, E-Mail, Nachricht) gespeichert, um deine Anfrage zu bearbeiten. Diese Daten werden ohne deine Einwilligung nicht an Dritte weitergegeben. Für die Übermittlung des Kontaktformulars nutzen wir den Dienst Formspree (formspree.io). Deren Datenschutzbestimmungen findest du unter formspree.io/legal/privacy-policy.</p>
-  <h2>4. Cookies</h2>
-  <p>Unsere Website verwendet derzeit keine Cookies.</p>
-  <h2>5. Analyse-Tools</h2>
-  <p>Unsere Website verwendet derzeit keine Analyse-Tools von Drittanbietern.</p>
-  <h2>6. Deine Rechte</h2>
-  <p>Gemäss dem Schweizer Datenschutzgesetz (DSG) hast du das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung und Datenübertragbarkeit. Kontakt: <a href="mailto:gian@kapprompt.ch">gian@kapprompt.ch</a></p>
-  <h2>7. SSL-Verschlüsselung</h2>
-  <p>Unsere Website nutzt SSL-Verschlüsselung für eine sichere Datenübertragung.</p>
-  <h2>8. Änderungen</h2>
-  <p>Wir behalten uns vor, diese Datenschutzerklärung jederzeit anzupassen.</p>
-  <p style="margin-top: 48px; color: var(--gray); font-size: 0.85rem;">Stand: April 2026</p>
-  
-</div>
-<footer>
-  <div class="footer-bottom">
-    <p>© 2026 KapPrompt — Ein Projekt von Gian Kappeler</p>
-    <div class="footer-legal"><a href="impressum.html">Impressum</a><a href="datenschutz.html">Datenschutz</a></div>
-  </div>
-</footer>
-<script src="main.js"></script>
+
+  <header class="nav scrolled">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__brand" aria-label="KapPrompt — zur Startseite">
+        <img src="logo-small.png" alt="" width="34" height="35">
+        <span>Kap<em>Prompt</em></span>
+      </a>
+      <nav class="nav__links" id="navLinks" aria-label="Hauptnavigation">
+        <a href="index.html#services">Services</a>
+        <a href="index.html#pricing">Pakete</a>
+        <a href="index.html#contact" class="btn btn--small btn--solid">Kontakt</a>
+      </nav>
+      <button class="nav__burger" id="navToggle" aria-expanded="false" aria-controls="navLinks" aria-label="Menü öffnen">
+        <span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main class="legal">
+    <h1>Datenschutzerklärung</h1>
+    <p class="legal__updated">Stand: April 2026</p>
+
+    <h2><span class="legal__no">1.</span>Allgemeine Hinweise</h2>
+    <p>Der Schutz deiner persönlichen Daten ist uns wichtig. Diese Datenschutzerklärung informiert dich über die Art, den Umfang und den Zweck der Verarbeitung von personenbezogenen Daten auf kapprompt.ch.</p>
+    <p>Verantwortlich:<br>
+    Gian Kappeler, Mettlenstrasse 19, 9523 Züberwangen, St. Gallen, Schweiz<br>
+    E-Mail: <a href="mailto:gian@kapprompt.ch">gian@kapprompt.ch</a></p>
+
+    <h2><span class="legal__no">2.</span>Erhebung und Speicherung personenbezogener Daten</h2>
+    <p>Beim Besuch unserer Website werden automatisch durch den Hosting-Provider Server-Logfiles erhoben (besuchte Seite, Datum/Uhrzeit, Browsertyp, Betriebssystem, Referrer URL, IP-Adresse). Eine Zuordnung zu bestimmten Personen findet nicht statt.</p>
+
+    <h2><span class="legal__no">3.</span>Kontaktformular und E-Mail</h2>
+    <p>Wenn du unser Kontaktformular nutzt oder uns per E-Mail kontaktierst, werden die übermittelten Daten (Name, E-Mail, Nachricht) gespeichert, um deine Anfrage zu bearbeiten. Diese Daten werden ohne deine Einwilligung nicht an Dritte weitergegeben. Für die Übermittlung des Kontaktformulars nutzen wir den Dienst Formspree (formspree.io). Deren Datenschutzbestimmungen findest du unter <a href="https://formspree.io/legal/privacy-policy" rel="noopener" target="_blank">formspree.io/legal/privacy-policy</a>.</p>
+
+    <h2><span class="legal__no">4.</span>Cookies</h2>
+    <p>Unsere Website verwendet derzeit keine Cookies.</p>
+
+    <h2><span class="legal__no">5.</span>Analyse-Tools</h2>
+    <p>Unsere Website verwendet derzeit keine Analyse-Tools von Drittanbietern.</p>
+
+    <h2><span class="legal__no">6.</span>Deine Rechte</h2>
+    <p>Gemäss dem Schweizer Datenschutzgesetz (DSG) hast du das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung und Datenübertragbarkeit. Kontakt: <a href="mailto:gian@kapprompt.ch">gian@kapprompt.ch</a></p>
+
+    <h2><span class="legal__no">7.</span>SSL-Verschlüsselung</h2>
+    <p>Unsere Website nutzt SSL-Verschlüsselung für eine sichere Datenübertragung.</p>
+
+    <h2><span class="legal__no">8.</span>Änderungen</h2>
+    <p>Wir behalten uns vor, diese Datenschutzerklärung jederzeit anzupassen.</p>
+
+    <a href="index.html" class="btn btn--ghost">← Zurück zur Startseite</a>
+  </main>
+
+  <footer class="footer">
+    <div class="footer__base">
+      <span>© 2026 KapPrompt — Ein Projekt von Gian Kappeler</span>
+      <span><a href="impressum.html">Impressum</a> · <a href="datenschutz.html">Datenschutz</a></span>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>

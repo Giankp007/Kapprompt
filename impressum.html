@@ -1,53 +1,70 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="de-CH">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Impressum — KapPrompt</title>
-<link rel="icon" type="image/svg+xml" href="favicon.svg">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Space+Mono:wght@400;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Impressum — KapPrompt</title>
+  <meta name="robots" content="noindex">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<canvas id="particleCanvas"></canvas>
-<div class="bg-blobs">
-  <div class="blob blob-1"></div>
-  <div class="blob blob-2"></div>
-</div>
-<nav id="mainNav">
-  <a href="index.html" class="logo-link">
-    <img src="logo.png" alt="KapPrompt" class="logo-img">
-    <div class="logo"><span class="kap">Kap</span><span class="prompt">Prompt</span></div>
-  </a>
-  <div class="nav-links">
-    <a href="index.html#services">Services</a>
-    <a href="index.html#pricing">Pakete</a>
-    <a href="index.html#contact" class="nav-cta">Kontakt</a>
-  </div>
-</nav>
-<div class="legal-page">
-  <h1>Impressum</h1>
-  <h2>Angaben gemäss Art. 3 UWG / Art. 12 OR</h2>
-  <p><strong>KapPrompt</strong><br>Gian Kappeler<br>Mettlenstrasse 19<br>9523 Züberwangen<br>St. Gallen, Schweiz</p>
-  <h2>Kontakt</h2>
-  <p>E-Mail: <a href="mailto:gian@kapprompt.ch">gian@kapprompt.ch</a><br>Telefon: 0775255749</p>
-  <h2>Verantwortlich für den Inhalt</h2>
-  <p>Gian Kappeler, Adresse wie oben</p>
-  <h2>Haftungsausschluss</h2>
-  <p>Der Autor übernimmt keinerlei Gewähr hinsichtlich der inhaltlichen Richtigkeit, Genauigkeit, Aktualität, Zuverlässigkeit und Vollständigkeit der Informationen. Haftungsansprüche gegen den Autor wegen Schäden materieller oder immaterieller Art, welche aus dem Zugriff oder der Nutzung bzw. Nichtnutzung der veröffentlichten Informationen entstanden sind, werden ausgeschlossen.</p>
-  <h2>Haftung für Links</h2>
-  <p>Verweise und Links auf Webseiten Dritter liegen ausserhalb unseres Verantwortungsbereichs. Es wird jegliche Verantwortung für solche Webseiten abgelehnt.</p>
-  <h2>Urheberrechte</h2>
-  <p>Die Urheber- und alle anderen Rechte an Inhalten, Bildern, Fotos oder anderen Dateien auf dieser Website gehören ausschliesslich KapPrompt bzw. den speziell genannten Rechteinhabern. Für die Reproduktion jeglicher Elemente ist die schriftliche Zustimmung im Voraus einzuholen.</p>
-</div>
-<footer>
-  <div class="footer-bottom">
-    <p>© 2026 KapPrompt — Ein Projekt von Gian Kappeler</p>
-    <div class="footer-legal"><a href="impressum.html">Impressum</a><a href="datenschutz.html">Datenschutz</a></div>
-  </div>
-</footer>
-<script src="main.js"></script>
+
+  <header class="nav scrolled">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__brand" aria-label="KapPrompt — zur Startseite">
+        <img src="logo-small.png" alt="" width="34" height="35">
+        <span>Kap<em>Prompt</em></span>
+      </a>
+      <nav class="nav__links" id="navLinks" aria-label="Hauptnavigation">
+        <a href="index.html#services">Services</a>
+        <a href="index.html#pricing">Pakete</a>
+        <a href="index.html#contact" class="btn btn--small btn--solid">Kontakt</a>
+      </nav>
+      <button class="nav__burger" id="navToggle" aria-expanded="false" aria-controls="navLinks" aria-label="Menü öffnen">
+        <span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main class="legal">
+    <h1>Impressum</h1>
+
+    <h2>Angaben gemäss Art. 3 UWG / Art. 12 OR</h2>
+    <address>
+      <b>KapPrompt</b><br>
+      Gian Kappeler<br>
+      Mettlenstrasse 19<br>
+      9523 Züberwangen<br>
+      St. Gallen, Schweiz
+    </address>
+
+    <h2>Kontakt</h2>
+    <p>E-Mail: <a href="mailto:gian@kapprompt.ch">gian@kapprompt.ch</a><br>
+    Telefon: <a href="tel:+41775255749">077 525 57 49</a></p>
+
+    <h2>Verantwortlich für den Inhalt</h2>
+    <p>Gian Kappeler, Adresse wie oben</p>
+
+    <h2>Haftungsausschluss</h2>
+    <p>Der Autor übernimmt keinerlei Gewähr hinsichtlich der inhaltlichen Richtigkeit, Genauigkeit, Aktualität, Zuverlässigkeit und Vollständigkeit der Informationen. Haftungsansprüche gegen den Autor wegen Schäden materieller oder immaterieller Art, welche aus dem Zugriff oder der Nutzung bzw. Nichtnutzung der veröffentlichten Informationen entstanden sind, werden ausgeschlossen.</p>
+
+    <h2>Haftung für Links</h2>
+    <p>Verweise und Links auf Webseiten Dritter liegen ausserhalb unseres Verantwortungsbereichs. Es wird jegliche Verantwortung für solche Webseiten abgelehnt.</p>
+
+    <h2>Urheberrechte</h2>
+    <p>Die Urheber- und alle anderen Rechte an Inhalten, Bildern, Fotos oder anderen Dateien auf dieser Website gehören ausschliesslich KapPrompt bzw. den speziell genannten Rechteinhabern. Für die Reproduktion jeglicher Elemente ist die schriftliche Zustimmung im Voraus einzuholen.</p>
+
+    <a href="index.html" class="btn btn--ghost">← Zurück zur Startseite</a>
+  </main>
+
+  <footer class="footer">
+    <div class="footer__base">
+      <span>© 2026 KapPrompt — Ein Projekt von Gian Kappeler</span>
+      <span><a href="impressum.html">Impressum</a> · <a href="datenschutz.html">Datenschutz</a></span>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>

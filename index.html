@@ -1,498 +1,454 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="de-CH">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>KapPrompt — KI-Lösungen für dein Business</title>
-<meta name="description" content="KapPrompt liefert KI-gestützten Content, Dokumente und Web-Tools für KMUs in der Ostschweiz. Schneller, günstiger, besser.">
-<link rel="icon" type="image/svg+xml" href="favicon.svg">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Space+Mono:wght@400;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KapPrompt — KI-Lösungen für dein Business</title>
+  <meta name="description" content="KapPrompt liefert KI-gestützten Content, Dokumente und Web-Tools für KMUs in der Ostschweiz. Schneller, günstiger, besser.">
+  <meta property="og:title" content="KapPrompt — KI-Lösungen für dein Business">
+  <meta property="og:description" content="Content, Dokumente und massgeschneiderte Web-Tools — produziert mit modernster KI. Schneller und günstiger als jede klassische Agentur.">
+  <meta property="og:image" content="logo.png">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-<div class="progress-bar" id="progressBar"></div>
-<canvas id="particleCanvas"></canvas>
+  <a class="skip-link" href="#main">Zum Inhalt springen</a>
 
-<!-- Animated Background Blobs -->
-<div class="bg-blobs">
-  <div class="blob blob-1"></div>
-  <div class="blob blob-2"></div>
-  <div class="blob blob-3"></div>
-</div>
-
-<!-- Nav -->
-<nav id="mainNav">
-  <a href="index.html" class="logo-link">
-    <img src="logo.png" alt="KapPrompt" class="logo-img">
-    <div class="logo"><span class="kap">Kap</span><span class="prompt">Prompt</span></div>
-  </a>
-  <div class="nav-links">
-    <a href="#services">Services</a>
-    <a href="#process">Ablauf</a>
-    <a href="#pricing">Pakete</a>
-    <a href="#contact" class="nav-cta">Jetzt starten</a>
-  </div>
-  <button class="mobile-toggle" id="mobileToggle" aria-label="Menü öffnen">
-    <span></span><span></span><span></span>
-  </button>
-</nav>
-
-<!-- Mobile Menu -->
-<div class="mobile-menu" id="mobileMenu">
-  <a href="#services">Services</a>
-  <a href="#process">Ablauf</a>
-  <a href="#pricing">Pakete</a>
-  <a href="#contact" class="nav-cta">Jetzt starten</a>
-</div>
-
-<!-- Hero -->
-<section class="hero" id="hero">
-  <div class="hero-content">
-    <div class="hero-badge">
-      <span class="pulse"></span>
-      KI-Agentur · Kanton St. Gallen & Ostschweiz
-    </div>
-
-    <h1>
-      <span class="line line-1">Dein Content.</span>
-      <span class="line line-2"><span class="stroke">Deine Tools.</span></span>
-      <span class="line line-3">Alles <span class="accent">KI.</span><span class="period">.</span></span>
-    </h1>
-
-    <p class="hero-sub">Content, Dokumente und massgeschneiderte Web-Tools — produziert mit modernster KI. <span class="highlight">Schneller und günstiger</span> als jede klassische Agentur.</p>
-
-    <div class="hero-ctas">
-      <a href="#contact" class="btn-primary">
-        <span>Kostenlos anfragen</span>
-        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+  <!-- ====================== NAV ====================== -->
+  <header class="nav" id="top">
+    <div class="nav__inner">
+      <a href="#top" class="nav__brand" aria-label="KapPrompt — zur Startseite">
+        <img src="logo-small.png" alt="" width="34" height="35">
+        <span>Kap<em>Prompt</em></span>
       </a>
-      <a href="#services" class="btn-ghost">Entdecken</a>
+      <nav class="nav__links" id="navLinks" aria-label="Hauptnavigation">
+        <a href="#services">Services</a>
+        <a href="#process">Ablauf</a>
+        <a href="#pricing">Pakete</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contact" class="btn btn--small btn--solid">Jetzt starten</a>
+      </nav>
+      <button class="nav__burger" id="navToggle" aria-expanded="false" aria-controls="navLinks" aria-label="Menü öffnen">
+        <span></span><span></span>
+      </button>
     </div>
+  </header>
 
-    <div class="hero-trust">
-      <div class="trust-item">
-        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>
-        Kostenloses Erstgespräch
-      </div>
-      <div class="trust-item">
-        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>
-        Lieferung in wenigen Tagen
-      </div>
-      <div class="trust-item">
-        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>
-        Persönlicher Kontakt
-      </div>
-    </div>
-  </div>
+  <main id="main">
 
-  <div class="hero-visual">
-    <div class="logo-orbit">
-      <img src="logo.png" alt="KapPrompt Logo" class="orbit-logo">
-      <div class="orbit-ring ring-1"></div>
-      <div class="orbit-ring ring-2"></div>
-      <div class="orbit-ring ring-3"></div>
-      <div class="orbit-particle p1"></div>
-      <div class="orbit-particle p2"></div>
-      <div class="orbit-particle p3"></div>
-      <div class="orbit-particle p4"></div>
-    </div>
-  </div>
+    <!-- ====================== HERO + CONTAINER SCROLL ====================== -->
+    <section class="hero" id="heroStage" aria-label="Intro">
+      <div class="hero__glow" aria-hidden="true"></div>
+      <div class="hero__grid" aria-hidden="true"></div>
 
-  <div class="scroll-cue"><span></span></div>
-</section>
+      <div class="hero__perspective">
 
-<!-- Marquee -->
-<div class="marquee">
-  <div class="marquee-inner">
-    <span class="marquee-item">Blogartikel</span><span class="marquee-item">SEO-Texte</span><span class="marquee-item">Pitch Decks</span><span class="marquee-item">Landing Pages</span><span class="marquee-item">Web-Apps</span><span class="marquee-item">Preisrechner</span><span class="marquee-item">Social Media</span><span class="marquee-item">Datenanalyse</span><span class="marquee-item">Newsletter</span><span class="marquee-item">Businesspläne</span><span class="marquee-item">Dashboards</span><span class="marquee-item">KI-Beratung</span>
-    <span class="marquee-item">Blogartikel</span><span class="marquee-item">SEO-Texte</span><span class="marquee-item">Pitch Decks</span><span class="marquee-item">Landing Pages</span><span class="marquee-item">Web-Apps</span><span class="marquee-item">Preisrechner</span><span class="marquee-item">Social Media</span><span class="marquee-item">Datenanalyse</span><span class="marquee-item">Newsletter</span><span class="marquee-item">Businesspläne</span><span class="marquee-item">Dashboards</span><span class="marquee-item">KI-Beratung</span>
-  </div>
-</div>
-
-<!-- Big Statement Section -->
-<section class="statement">
-  <div class="statement-inner">
-    <p class="statement-text reveal">
-      <span class="statement-line">Wir bringen <em>KI-Power</em></span>
-      <span class="statement-line">zu kleinen und mittleren</span>
-      <span class="statement-line">Unternehmen in der <span class="accent-text">Ostschweiz.</span></span>
-    </p>
-  </div>
-</section>
-
-<!-- Services -->
-<section class="section" id="services">
-  <div class="section-header">
-    <div class="section-label reveal">Was wir liefern</div>
-    <h2 class="section-title reveal">Alles was dein Business online braucht.<br>In einem <span class="accent-text">Bruchteil der Zeit.</span></h2>
-  </div>
-  <div class="services-grid">
-    <div class="service-card reveal">
-      <span class="service-num">01</span>
-      <div class="service-icon-wrap"><svg viewBox="0 0 24 24"><path d="M12 20h9M16.5 3.5a2.12 2.12 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg></div>
-      <h3>Content & Texte</h3>
-      <p>Blogartikel, SEO-Texte, Social-Media-Posts, Newsletter — perfekt formuliert und in deiner Stimme geschrieben.</p>
-      <div class="service-tags">
-        <span>Blog</span><span>SEO</span><span>Newsletter</span>
-      </div>
-    </div>
-    <div class="service-card reveal rd1">
-      <span class="service-num">02</span>
-      <div class="service-icon-wrap"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div>
-      <h3>Dokumente & Decks</h3>
-      <p>Angebote, Businesspläne, Pitch Decks, Reports — professionell formatiert und sofort einsatzbereit.</p>
-      <div class="service-tags">
-        <span>Word</span><span>PDF</span><span>PowerPoint</span>
-      </div>
-    </div>
-    <div class="service-card reveal rd2">
-      <span class="service-num">03</span>
-      <div class="service-icon-wrap"><svg viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/><line x1="14" y1="4" x2="10" y2="20"/></svg></div>
-      <h3>Web-Tools & Apps</h3>
-      <p>Preisrechner, Buchungsformulare, Dashboards — massgeschneidert und sofort einsetzbar für dein Business.</p>
-      <div class="service-tags">
-        <span>Rechner</span><span>Formulare</span><span>Apps</span>
-      </div>
-    </div>
-    <div class="service-card reveal">
-      <span class="service-num">04</span>
-      <div class="service-icon-wrap"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div>
-      <h3>Design & Branding</h3>
-      <p>Landing Pages, E-Mail-Templates, visuelle Identität — konsistent und visuell überzeugend.</p>
-      <div class="service-tags">
-        <span>Landing</span><span>E-Mail</span><span>Branding</span>
-      </div>
-    </div>
-    <div class="service-card reveal rd1">
-      <span class="service-num">05</span>
-      <div class="service-icon-wrap"><svg viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></div>
-      <h3>Datenaufbereitung</h3>
-      <p>Aus Rohdaten werden Insights. Bereinigung, Analyse und Visualisierung — alles aus einer Hand.</p>
-      <div class="service-tags">
-        <span>Excel</span><span>Analysen</span><span>Dashboards</span>
-      </div>
-    </div>
-    <div class="service-card reveal rd2">
-      <span class="service-num">06</span>
-      <div class="service-icon-wrap"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg></div>
-      <h3>KI-Beratung</h3>
-      <p>Wir zeigen dir, wie du KI selbst nutzen kannst. Workflows, Prompts, Tools — praxisnah und umsetzbar.</p>
-      <div class="service-tags">
-        <span>Training</span><span>Workflows</span><span>Prompts</span>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Showcase -->
-<div class="showcase">
-  <div class="showcase-inner">
-    <div class="showcase-text reveal">
-      <div class="section-label">Warum KapPrompt</div>
-      <h2>Klassische Agentur?<br><span class="accent-text">Nein danke.</span></h2>
-      <p class="showcase-lead">Herkömmliche Agenturen brauchen Wochen und kosten Tausende. Wir liefern in Tagen — dank modernster KI, kombiniert mit menschlichem Qualitätsanspruch.</p>
-      <div class="comparison">
-        <div class="comp-col comp-old">
-          <div class="comp-label">Klassische Agentur</div>
-          <ul>
-            <li><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="#ff6b6b" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>2-4 Wochen Lieferzeit</li>
-            <li><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="#ff6b6b" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>Stundensätze ab CHF 150</li>
-            <li><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="#ff6b6b" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>Endlose Abstimmungen</li>
-            <li><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="#ff6b6b" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>Versteckte Kosten</li>
+        <!-- title component (translates up on scroll) -->
+        <div class="hero__head" id="heroHead">
+          <p class="eyebrow reveal">KI-Agentur · Kanton St.&nbsp;Gallen &amp; Ostschweiz</p>
+          <h1 class="hero__title reveal" style="--d:.06s">
+            Dein Content. Deine Tools.<br>
+            <span class="hero__big">Alles <em>KI.</em></span>
+          </h1>
+          <p class="hero__sub reveal" style="--d:.12s">
+            Content, Dokumente und massgeschneiderte Web-Tools — produziert mit
+            modernster KI. Schneller und günstiger als jede klassische Agentur.
+          </p>
+          <div class="hero__cta reveal" style="--d:.18s">
+            <a href="#contact" class="btn btn--solid">Kostenlos anfragen</a>
+            <a href="#services" class="btn btn--ghost">Entdecken</a>
+          </div>
+          <ul class="hero__trust reveal" style="--d:.24s">
+            <li>Kostenloses Erstgespräch</li>
+            <li>Lieferung in wenigen Tagen</li>
+            <li>Persönlicher Kontakt</li>
           </ul>
         </div>
-        <div class="comp-col comp-new">
-          <div class="comp-label">KapPrompt</div>
+
+        <!-- 3D card (rotateX 20° → 0° on scroll) -->
+        <div class="device" id="device">
+          <div class="device__screen">
+            <div class="mock" aria-hidden="true">
+              <div class="mock__bar">
+                <span class="mock__dots"><i></i><i></i><i></i></span>
+                <span class="mock__title">kapprompt — produktion</span>
+                <span class="mock__chip">{"ai": "ready"}</span>
+              </div>
+              <div class="mock__body">
+                <aside class="mock__side">
+                  <span class="mock__sidehead">Aufträge</span>
+                  <span class="mock__item is-active">Blogartikel</span>
+                  <span class="mock__item">Pitch Deck</span>
+                  <span class="mock__item">Preisrechner</span>
+                  <span class="mock__item">Newsletter</span>
+                  <span class="mock__item">Dashboard</span>
+                </aside>
+                <div class="mock__main">
+                  <div class="mock__dochead">
+                    <span class="mock__doctitle">5 KI-Tricks für Schweizer KMU</span>
+                    <span class="mock__meta"><b>SEO ✓</b> · 840 Wörter · de-CH</span>
+                  </div>
+                  <p class="mock__type"><span id="typeLine"></span><i class="caret"></i></p>
+                  <div class="mock__lines">
+                    <span style="--w:96%"></span><span style="--w:88%"></span>
+                    <span style="--w:93%"></span><span style="--w:64%"></span>
+                    <span class="mock__sub" style="--w:34%"></span>
+                    <span style="--w:90%"></span><span style="--w:97%"></span>
+                    <span style="--w:86%"></span><span style="--w:92%"></span>
+                    <span style="--w:58%"></span>
+                  </div>
+                  <div class="mock__foot">
+                    <span class="mock__gen">generate()</span>
+                    <span class="mock__progress"><i></i></span>
+                    <span class="mock__files">
+                      <b>.docx</b><b>.pdf</b><b>.pptx</b>
+                    </span>
+                  </div>
+                </div>
+                <aside class="mock__rail">
+                  <span class="mock__sidehead">Pipeline</span>
+                  <span class="mock__step is-done">Briefing</span>
+                  <span class="mock__step is-done">KI-Produktion</span>
+                  <span class="mock__step is-now">Feinschliff</span>
+                  <span class="mock__step">Lieferung</span>
+                  <span class="mock__eta">Lieferung in 2–5 Tagen</span>
+                  <span class="mock__sidehead">Output / Woche</span>
+                  <span class="mock__chart">
+                    <i style="--h:34%"></i><i style="--h:52%"></i><i style="--h:46%"></i>
+                    <i style="--h:70%"></i><i style="--h:88%"></i>
+                  </span>
+                </aside>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ====================== MARQUEE ====================== -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee__track">
+        <!-- list ×2 for seamless loop -->
+        <span>Blogartikel</span><span>SEO-Texte</span><span>Pitch Decks</span><span>Landing Pages</span><span>Web-Apps</span><span>Preisrechner</span><span>Social Media</span><span>Datenanalyse</span><span>Newsletter</span><span>Businesspläne</span><span>Dashboards</span><span>KI-Beratung</span>
+        <span>Blogartikel</span><span>SEO-Texte</span><span>Pitch Decks</span><span>Landing Pages</span><span>Web-Apps</span><span>Preisrechner</span><span>Social Media</span><span>Datenanalyse</span><span>Newsletter</span><span>Businesspläne</span><span>Dashboards</span><span>KI-Beratung</span>
+      </div>
+    </div>
+
+    <!-- ====================== STATEMENT ====================== -->
+    <section class="statement">
+      <p class="reveal">Wir bringen <em>KI-Power</em> zu kleinen und mittleren Unternehmen in&nbsp;der&nbsp;Ostschweiz.</p>
+    </section>
+
+    <!-- ====================== SERVICES (index list) ====================== -->
+    <section class="section" id="services">
+      <div class="section__head reveal">
+        <p class="eyebrow">Was wir liefern</p>
+        <h2>Alles was dein Business online braucht.<br><span class="dim">In einem Bruchteil der Zeit.</span></h2>
+      </div>
+
+      <ol class="index">
+        <li class="index__row reveal">
+          <span class="index__no">01</span>
+          <div class="index__body">
+            <h3>Content &amp; Texte</h3>
+            <p>Blogartikel, SEO-Texte, Social-Media-Posts, Newsletter — perfekt formuliert und in deiner Stimme geschrieben.</p>
+          </div>
+          <ul class="index__tags"><li>Blog</li><li>SEO</li><li>Newsletter</li></ul>
+        </li>
+        <li class="index__row reveal">
+          <span class="index__no">02</span>
+          <div class="index__body">
+            <h3>Dokumente &amp; Decks</h3>
+            <p>Angebote, Businesspläne, Pitch Decks, Reports — professionell formatiert und sofort einsatzbereit.</p>
+          </div>
+          <ul class="index__tags"><li>Word</li><li>PDF</li><li>PowerPoint</li></ul>
+        </li>
+        <li class="index__row reveal">
+          <span class="index__no">03</span>
+          <div class="index__body">
+            <h3>Web-Tools &amp; Apps</h3>
+            <p>Preisrechner, Buchungsformulare, Dashboards — massgeschneidert und sofort einsetzbar für dein Business.</p>
+          </div>
+          <ul class="index__tags"><li>Rechner</li><li>Formulare</li><li>Apps</li></ul>
+        </li>
+        <li class="index__row reveal">
+          <span class="index__no">04</span>
+          <div class="index__body">
+            <h3>Design &amp; Branding</h3>
+            <p>Landing Pages, E-Mail-Templates, visuelle Identität — konsistent und visuell überzeugend.</p>
+          </div>
+          <ul class="index__tags"><li>Landing</li><li>E-Mail</li><li>Branding</li></ul>
+        </li>
+        <li class="index__row reveal">
+          <span class="index__no">05</span>
+          <div class="index__body">
+            <h3>Datenaufbereitung</h3>
+            <p>Aus Rohdaten werden Insights. Bereinigung, Analyse und Visualisierung — alles aus einer Hand.</p>
+          </div>
+          <ul class="index__tags"><li>Excel</li><li>Analysen</li><li>Dashboards</li></ul>
+        </li>
+        <li class="index__row reveal">
+          <span class="index__no">06</span>
+          <div class="index__body">
+            <h3>KI-Beratung</h3>
+            <p>Wir zeigen dir, wie du KI selbst nutzen kannst. Workflows, Prompts, Tools — praxisnah und umsetzbar.</p>
+          </div>
+          <ul class="index__tags"><li>Training</li><li>Workflows</li><li>Prompts</li></ul>
+        </li>
+      </ol>
+    </section>
+
+    <!-- ====================== COMPARISON ====================== -->
+    <section class="section" id="why">
+      <div class="section__head reveal">
+        <p class="eyebrow">Warum KapPrompt</p>
+        <h2>Klassische Agentur?<br><span class="dim">Nein danke.</span></h2>
+        <p class="section__lead">Herkömmliche Agenturen brauchen Wochen und kosten Tausende. Wir liefern in Tagen — dank modernster KI, kombiniert mit menschlichem Qualitätsanspruch.</p>
+      </div>
+
+      <div class="versus reveal">
+        <span class="versus__float versus__float--a">&lt;content /&gt;</span>
+        <span class="versus__float versus__float--b">generate()</span>
+        <div class="versus__col versus__col--old">
+          <h3>Klassische Agentur</h3>
           <ul>
-            <li><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="var(--accent)" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>2-5 Tage Lieferzeit</li>
-            <li><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="var(--accent)" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>Fixe Monatspakete</li>
-            <li><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="var(--accent)" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>Direkter Ansprechpartner</li>
-            <li><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="var(--accent)" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>Transparente Preise</li>
+            <li>2-4 Wochen Lieferzeit</li>
+            <li>Stundensätze ab CHF 150</li>
+            <li>Endlose Abstimmungen</li>
+            <li>Versteckte Kosten</li>
+          </ul>
+        </div>
+        <span class="versus__vs" aria-hidden="true">vs</span>
+        <div class="versus__col versus__col--new">
+          <h3>KapPrompt</h3>
+          <ul>
+            <li>2-5 Tage Lieferzeit</li>
+            <li>Fixe Monatspakete</li>
+            <li>Direkter Ansprechpartner</li>
+            <li>Transparente Preise</li>
           </ul>
         </div>
       </div>
-    </div>
-    <div class="showcase-visual" data-parallax="0.04">
-      <canvas id="showcaseCanvas"></canvas>
-      <div class="visual-overlay">
-        <div class="code-floater f1">{"ai": "ready"}</div>
-        <div class="code-floater f2">&lt;content /&gt;</div>
-        <div class="code-floater f3">generate()</div>
-      </div>
-    </div>
-  </div>
-</div>
 
-<!-- Stats -->
-<div class="stats-bar">
-  <div class="stats-inner">
-    <div class="stat-item reveal">
-      <h3 data-count="3">0</h3>
-      <p>Tage statt Wochen</p>
-    </div>
-    <div class="stat-item reveal rd1">
-      <h3 data-count="70" data-suffix="%">0%</h3>
-      <p>Günstiger als Agenturen</p>
-    </div>
-    <div class="stat-item reveal rd2">
-      <h3 data-count="24" data-suffix="/7">0</h3>
-      <p>KI arbeitet immer</p>
-    </div>
-    <div class="stat-item reveal rd3">
-      <h3 data-count="100" data-suffix="%">0%</h3>
-      <p>Individuell für dich</p>
-    </div>
-  </div>
-</div>
+      <!-- stats -->
+      <dl class="stats">
+        <div class="reveal"><dt><span class="count" data-prefix="2–" data-count="5">2–5</span></dt><dd>Tage statt Wochen</dd></div>
+        <div class="reveal" style="--d:.07s"><dt><span class="count" data-count="50" data-suffix="%">50%</span></dt><dd>Günstiger als Agenturen</dd></div>
+        <div class="reveal" style="--d:.14s"><dt><span class="count" data-count="24" data-suffix="/7">24/7</span></dt><dd>KI arbeitet immer</dd></div>
+        <div class="reveal" style="--d:.21s"><dt><span class="count" data-count="100" data-suffix="%">100%</span></dt><dd>Individuell für dich</dd></div>
+      </dl>
+    </section>
 
-<!-- Process -->
-<section class="section" id="process">
-  <div class="section-header">
-    <div class="section-label reveal">So läuft's ab</div>
-    <h2 class="section-title reveal">Von deiner Idee zum fertigen Produkt.<br>In <span class="accent-text">vier Schritten.</span></h2>
-  </div>
-  <div class="process-timeline">
-    <div class="process-step reveal">
-      <div class="step-marker"><span>01</span></div>
-      <div class="step-content">
-        <h4>Briefing</h4>
-        <p>Du erzählst uns, was du brauchst — per E-Mail, Telefon oder Chat. Wir stellen die richtigen Fragen und verstehen dein Business.</p>
+    <!-- ====================== PROCESS ====================== -->
+    <section class="section" id="process">
+      <div class="section__head reveal">
+        <p class="eyebrow">So läuft's ab</p>
+        <h2>Von deiner Idee zum fertigen Produkt.<br><span class="dim">In vier Schritten.</span></h2>
       </div>
-    </div>
-    <div class="process-step reveal">
-      <div class="step-marker"><span>02</span></div>
-      <div class="step-content">
-        <h4>KI-Produktion</h4>
-        <p>Modernste KI-Technologie erstellt deinen Content, deine Dokumente oder Web-Tools — schnell und effizient.</p>
-      </div>
-    </div>
-    <div class="process-step reveal">
-      <div class="step-marker"><span>03</span></div>
-      <div class="step-content">
-        <h4>Feinschliff</h4>
-        <p>Jedes Stück wird von Hand geprüft, verfeinert und an deine Marke angepasst. Dein Feedback fliesst direkt ein.</p>
-      </div>
-    </div>
-    <div class="process-step reveal">
-      <div class="step-marker"><span>04</span></div>
-      <div class="step-content">
-        <h4>Lieferung</h4>
-        <p>Fertige Dateien, live geschaltete Tools, einsatzbereiter Content — in deinem Format, bereit zum Einsatz.</p>
-      </div>
-    </div>
-  </div>
-</section>
 
-<!-- Pricing -->
-<section class="section" id="pricing">
-  <div class="section-header">
-    <div class="section-label reveal">Pakete & Preise</div>
-    <h2 class="section-title reveal">Klare Preise.<br><span class="accent-text">Kein Kleingedrucktes.</span></h2>
-  </div>
-  <div class="pricing-grid">
-    <div class="price-card reveal">
-      <div class="price-tier">Starter</div>
-      <div class="price-amount">CHF 490</div>
-      <div class="price-period">pro Monat</div>
-      <ul class="price-features">
-        <li>4 Blogartikel oder Social-Media-Sets</li>
-        <li>SEO-Grundoptimierung</li>
-        <li>1 Revision pro Stück</li>
-        <li>E-Mail-Support</li>
-      </ul>
-      <a href="#contact" class="price-btn outline">Anfragen</a>
-    </div>
-    <div class="price-card featured reveal rd1">
-      <div class="price-badge">Am beliebtesten</div>
-      <div class="price-tier">Business</div>
-      <div class="price-amount">CHF 990</div>
-      <div class="price-period">pro Monat</div>
-      <ul class="price-features">
-        <li>Alles aus dem Starter-Paket</li>
-        <li>Professionelle Dokumente & Decks</li>
-        <li>Monatliche KI-Beratung (30 Min)</li>
-        <li>Prioritäts-Support</li>
-      </ul>
-      <a href="#contact" class="price-btn solid">Anfragen</a>
-    </div>
-    <div class="price-card reveal rd2">
-      <div class="price-tier">Premium</div>
-      <div class="price-amount">CHF 1'990</div>
-      <div class="price-period">pro Monat</div>
-      <ul class="price-features">
-        <li>Alles aus dem Business-Paket</li>
-        <li>Massgeschneiderte Web-Tools & Apps</li>
-        <li>Datenanalyse & Dashboards</li>
-        <li>Dedizierter Ansprechpartner</li>
-      </ul>
-      <a href="#contact" class="price-btn outline">Anfragen</a>
-    </div>
-  </div>
-  <p class="pricing-footnote reveal">Alle Preise exkl. MwSt. · Monatlich kündbar · Individuelle Projekte auf Anfrage</p>
-</section>
+      <ol class="steps">
+        <li class="reveal">
+          <span class="steps__node" aria-hidden="true"></span>
+          <span class="steps__no">01</span>
+          <h3>Briefing</h3>
+          <p>Du erzählst uns, was du brauchst — per E-Mail, Telefon oder Chat. Wir stellen die richtigen Fragen und verstehen dein Business.</p>
+        </li>
+        <li class="reveal" style="--d:.08s">
+          <span class="steps__node" aria-hidden="true"></span>
+          <span class="steps__no">02</span>
+          <h3>KI-Produktion</h3>
+          <p>Modernste KI-Technologie erstellt deinen Content, deine Dokumente oder Web-Tools — schnell und effizient.</p>
+        </li>
+        <li class="reveal" style="--d:.16s">
+          <span class="steps__node" aria-hidden="true"></span>
+          <span class="steps__no">03</span>
+          <h3>Feinschliff</h3>
+          <p>Jedes Stück wird von Hand geprüft, verfeinert und an deine Marke angepasst. Dein Feedback fliesst direkt ein.</p>
+        </li>
+        <li class="reveal" style="--d:.24s">
+          <span class="steps__node" aria-hidden="true"></span>
+          <span class="steps__no">04</span>
+          <h3>Lieferung</h3>
+          <p>Fertige Dateien, live geschaltete Tools, einsatzbereiter Content — in deinem Format, bereit zum Einsatz.</p>
+        </li>
+      </ol>
+    </section>
 
-<!-- FAQ -->
-<section class="section faq-section">
-  <div class="section-header">
-    <div class="section-label reveal">Häufige Fragen</div>
-    <h2 class="section-title reveal">Noch <span class="accent-text">Fragen?</span></h2>
-  </div>
-  <div class="faq-list">
-    <details class="faq-item reveal">
-      <summary>Wie läuft die Zusammenarbeit genau ab?</summary>
-      <p>Nach deiner Anfrage vereinbaren wir ein kostenloses Erstgespräch. Du erzählst uns von deinem Business, deinen Zielen und was du brauchst. Danach erhältst du von uns ein Angebot — und wenn du zusagst, starten wir direkt. Du bekommst einen festen Ansprechpartner und klare Kommunikation per E-Mail oder WhatsApp.</p>
-    </details>
-    <details class="faq-item reveal">
-      <summary>Wer erstellt den Content — du oder die KI?</summary>
-      <p>Beide. Wir nutzen KI als Werkzeug, um schnell hochwertige Entwürfe zu produzieren. Jeder Text, jedes Dokument und jedes Tool wird danach von uns sorgfältig geprüft, angepasst und in deine Markenstimme gebracht. Das Ergebnis ist immer ein handverlesenes Produkt — nur eben deutlich schneller und günstiger.</p>
-    </details>
-    <details class="faq-item reveal">
-      <summary>Was passiert, wenn mir etwas nicht gefällt?</summary>
-      <p>Jedes Paket beinhaltet mindestens eine Revision pro Stück. Wir arbeiten so lange mit dir, bis du zufrieden bist. Wir wollen, dass du unsere Arbeit liebst — nicht nur duldest.</p>
-    </details>
-    <details class="faq-item reveal">
-      <summary>Wie schnell bekomme ich meine Sachen?</summary>
-      <p>Die meisten Einzelprojekte liefern wir innerhalb von 2–5 Werktagen. Bei monatlichen Paketen gibt es einen festen Produktionsplan, den wir gemeinsam mit dir abstimmen.</p>
-    </details>
-    <details class="faq-item reveal">
-      <summary>Kann ich jederzeit kündigen?</summary>
-      <p>Ja. Alle Monatspakete sind monatlich kündbar. Keine Mindestlaufzeit, keine versteckten Klauseln.</p>
-    </details>
-    <details class="faq-item reveal">
-      <summary>Arbeitest du auch mit Kunden ausserhalb der Ostschweiz?</summary>
-      <p>Absolut. Wir sitzen im Kanton St. Gallen und arbeiten hauptsächlich digital — das heisst wir können Kunden in der ganzen Schweiz und darüber hinaus bedienen.</p>
-    </details>
-  </div>
-</section>
-
-<!-- Contact -->
-<section class="section contact-section" id="contact">
-  <div class="contact-wrapper">
-    <div class="contact-info reveal">
-      <div class="section-label">Kontakt</div>
-      <h2 class="contact-title">Bereit für den<br><span class="accent-text">nächsten Schritt?</span></h2>
-      <p class="contact-desc">Schick uns eine Nachricht — wir melden uns innerhalb von 24 Stunden bei dir. Das Erstgespräch ist immer kostenlos.</p>
-      <div class="contact-details">
-        <a href="mailto:gian@kapprompt.ch" class="contact-detail-card">
-          <div class="detail-icon">
-            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-          </div>
-          <div class="detail-text">
-            <span class="detail-label">E-Mail</span>
-            <span class="detail-value">gian@kapprompt.ch</span>
-          </div>
-        </a>
-        <div class="contact-detail-card">
-          <div class="detail-icon">
-            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
-          </div>
-          <div class="detail-text">
-            <span class="detail-label">Standort</span>
-            <span class="detail-value">St. Gallen, Schweiz</span>
-          </div>
-        </div>
-        <div class="contact-detail-card">
-          <div class="detail-icon">
-            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-          </div>
-          <div class="detail-text">
-            <span class="detail-label">Antwortzeit</span>
-            <span class="detail-value">Innerhalb von 24h</span>
-          </div>
-        </div>
+    <!-- ====================== PRICING ====================== -->
+    <section class="section" id="pricing">
+      <div class="section__head reveal">
+        <p class="eyebrow">Pakete &amp; Preise</p>
+        <h2>Klare Preise.<br><span class="dim">Kein Kleingedrucktes.</span></h2>
       </div>
-    </div>
-    <div class="contact-form-wrap reveal rd1">
-      <form id="contactForm" action="https://formspree.io/f/DEINE_FORMSPREE_ID" method="POST" class="contact-form">
-        <div class="form-row">
-          <div class="form-group">
-            <label for="name">Name</label>
-            <input type="text" id="name" name="name" placeholder="Dein Name" required>
-          </div>
-          <div class="form-group">
-            <label for="email">E-Mail</label>
-            <input type="email" id="email" name="email" placeholder="deine@email.ch" required>
-          </div>
-        </div>
-        <div class="form-group">
-          <label for="company">Firma <span class="optional">(optional)</span></label>
-          <input type="text" id="company" name="company" placeholder="Dein Unternehmen">
-        </div>
-        <div class="form-group">
-          <label for="package">Interesse an</label>
-          <select id="package" name="package">
-            <option value="Noch unsicher">Noch unsicher — Beratung gewünscht</option>
-            <option value="Starter">Starter-Paket (CHF 490/Mt)</option>
-            <option value="Business">Business-Paket (CHF 990/Mt)</option>
-            <option value="Premium">Premium-Paket (CHF 1'990/Mt)</option>
-            <option value="Einzelprojekt">Einzelprojekt</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label for="message">Nachricht</label>
-          <textarea id="message" name="message" rows="4" placeholder="Was können wir für dich tun?" required></textarea>
-        </div>
-        <button type="submit" class="btn-primary form-submit">
-          <span class="submit-text">Nachricht senden</span>
-          <span class="submit-loading" style="display:none;">Wird gesendet...</span>
-          <svg class="submit-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </button>
-        <p class="form-note">Wir antworten innerhalb von 24h. Deine Daten werden vertraulich behandelt.</p>
-      </form>
-      <div id="formSuccess" class="form-success" style="display:none;">
-        <div class="success-icon">
-          <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-        </div>
-        <h3>Nachricht gesendet!</h3>
-        <p>Danke für deine Anfrage. Wir melden uns innerhalb von 24 Stunden bei dir.</p>
+
+      <div class="plans">
+        <article class="plan reveal">
+          <h3>Starter</h3>
+          <p class="plan__price"><b>CHF 490</b><span>pro Monat</span></p>
+          <ul>
+            <li>4 Blogartikel oder Social-Media-Sets</li>
+            <li>SEO-Grundoptimierung</li>
+            <li>1 Revision pro Stück</li>
+            <li>E-Mail-Support</li>
+          </ul>
+          <a href="#contact" class="btn btn--ghost btn--full" data-plan="Starter-Paket (CHF 490/Mt)">Anfragen</a>
+        </article>
+
+        <article class="plan plan--hot reveal" style="--d:.08s">
+          <span class="plan__badge">Am beliebtesten</span>
+          <h3>Business</h3>
+          <p class="plan__price"><b>CHF 990</b><span>pro Monat</span></p>
+          <ul>
+            <li>Alles aus dem Starter-Paket</li>
+            <li>Professionelle Dokumente &amp; Decks</li>
+            <li>Monatliche KI-Beratung (30 Min)</li>
+            <li>Prioritäts-Support</li>
+          </ul>
+          <a href="#contact" class="btn btn--solid btn--full" data-plan="Business-Paket (CHF 990/Mt)">Anfragen</a>
+        </article>
+
+        <article class="plan reveal" style="--d:.16s">
+          <h3>Premium</h3>
+          <p class="plan__price"><b>CHF 1'990</b><span>pro Monat</span></p>
+          <ul>
+            <li>Alles aus dem Business-Paket</li>
+            <li>Massgeschneiderte Web-Tools &amp; Apps</li>
+            <li>Datenanalyse &amp; Dashboards</li>
+            <li>Dedizierter Ansprechpartner</li>
+          </ul>
+          <a href="#contact" class="btn btn--ghost btn--full" data-plan="Premium-Paket (CHF 1'990/Mt)">Anfragen</a>
+        </article>
       </div>
-    </div>
-  </div>
-</section>
+      <p class="plans__note reveal">Alle Preise exkl. MwSt. · Monatlich kündbar · Individuelle Projekte auf Anfrage</p>
+    </section>
 
-<!-- Footer -->
-<footer>
-  <div class="footer-top">
-    <div class="footer-brand">
-      <a href="index.html" class="logo-link">
-        <img src="logo.png" alt="KapPrompt" class="footer-logo-img">
-        <div class="logo"><span class="kap">Kap</span><span class="prompt">Prompt</span></div>
-      </a>
-      <p>KI-gestützte Lösungen für Content, Dokumente und Web-Tools. Für KMUs in der Ostschweiz und darüber hinaus.</p>
-    </div>
-    <div class="footer-col">
-      <h4>Services</h4>
-      <a href="#services">Content & Texte</a>
-      <a href="#services">Dokumente & Decks</a>
-      <a href="#services">Web-Tools & Apps</a>
-      <a href="#services">KI-Beratung</a>
-    </div>
-    <div class="footer-col">
-      <h4>Unternehmen</h4>
-      <a href="#process">So läuft's ab</a>
-      <a href="#pricing">Pakete & Preise</a>
-      <a href="impressum.html">Impressum</a>
-      <a href="datenschutz.html">Datenschutz</a>
-    </div>
-    <div class="footer-col">
-      <h4>Kontakt</h4>
-      <a href="mailto:gian@kapprompt.ch">gian@kapprompt.ch</a>
-      <a href="#contact">Anfrage senden</a>
-      <span class="footer-location">Kanton St. Gallen, Schweiz</span>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    <p>© 2026 KapPrompt — Ein Projekt von Gian Kappeler</p>
-    <div class="footer-legal">
-      <a href="impressum.html">Impressum</a>
-      <a href="datenschutz.html">Datenschutz</a>
-    </div>
-  </div>
-</footer>
+    <!-- ====================== FAQ ====================== -->
+    <section class="section section--narrow" id="faq">
+      <div class="section__head reveal">
+        <p class="eyebrow">Häufige Fragen</p>
+        <h2>Noch Fragen?</h2>
+      </div>
 
-<script src="main.js"></script>
+      <div class="faq reveal">
+        <details>
+          <summary>Wie läuft die Zusammenarbeit genau ab?<span class="faq__icon" aria-hidden="true"></span></summary>
+          <div class="faq__a"><p>Nach deiner Anfrage vereinbaren wir ein kostenloses Erstgespräch. Du erzählst uns von deinem Business, deinen Zielen und was du brauchst. Danach erhältst du von uns ein Angebot — und wenn du zusagst, starten wir direkt. Du bekommst einen festen Ansprechpartner und klare Kommunikation per E-Mail oder WhatsApp.</p></div>
+        </details>
+        <details>
+          <summary>Wer erstellt den Content — du oder die KI?<span class="faq__icon" aria-hidden="true"></span></summary>
+          <div class="faq__a"><p>Beide. Wir nutzen KI als Werkzeug, um schnell hochwertige Entwürfe zu produzieren. Jeder Text, jedes Dokument und jedes Tool wird danach von uns sorgfältig geprüft, angepasst und in deine Markenstimme gebracht. Das Ergebnis ist immer ein handverlesenes Produkt — nur eben deutlich schneller und günstiger.</p></div>
+        </details>
+        <details>
+          <summary>Was passiert, wenn mir etwas nicht gefällt?<span class="faq__icon" aria-hidden="true"></span></summary>
+          <div class="faq__a"><p>Jedes Paket beinhaltet mindestens eine Revision pro Stück. Wir arbeiten so lange mit dir, bis du zufrieden bist. Wir wollen, dass du unsere Arbeit liebst — nicht nur duldest.</p></div>
+        </details>
+        <details>
+          <summary>Wie schnell bekomme ich meine Sachen?<span class="faq__icon" aria-hidden="true"></span></summary>
+          <div class="faq__a"><p>Die meisten Einzelprojekte liefern wir innerhalb von 2–5 Werktagen. Bei monatlichen Paketen gibt es einen festen Produktionsplan, den wir gemeinsam mit dir abstimmen.</p></div>
+        </details>
+        <details>
+          <summary>Kann ich jederzeit kündigen?<span class="faq__icon" aria-hidden="true"></span></summary>
+          <div class="faq__a"><p>Ja. Alle Monatspakete sind monatlich kündbar. Keine Mindestlaufzeit, keine versteckten Klauseln.</p></div>
+        </details>
+        <details>
+          <summary>Arbeitest du auch mit Kunden ausserhalb der Ostschweiz?<span class="faq__icon" aria-hidden="true"></span></summary>
+          <div class="faq__a"><p>Absolut. Wir sitzen im Kanton St. Gallen und arbeiten hauptsächlich digital — das heisst wir können Kunden in der ganzen Schweiz und darüber hinaus bedienen.</p></div>
+        </details>
+      </div>
+    </section>
+
+    <!-- ====================== CONTACT ====================== -->
+    <section class="section" id="contact">
+      <div class="contact">
+        <div class="contact__info reveal">
+          <p class="eyebrow">Kontakt</p>
+          <h2>Bereit für den<br><span class="dim">nächsten Schritt?</span></h2>
+          <p class="section__lead">Schick uns eine Nachricht — wir melden uns innerhalb von 24 Stunden bei dir. Das Erstgespräch ist immer kostenlos.</p>
+          <ul class="contact__facts">
+            <li><span>E-Mail</span><a href="mailto:gian@kapprompt.ch">gian@kapprompt.ch</a></li>
+            <li><span>Standort</span>St. Gallen, Schweiz</li>
+            <li><span>Antwortzeit</span>Innerhalb von 24h</li>
+          </ul>
+        </div>
+
+        <form class="form reveal" id="contactForm" novalidate>
+          <div class="form__grid">
+            <label>Name
+              <input type="text" name="name" autocomplete="name" required>
+            </label>
+            <label>E-Mail
+              <input type="email" name="email" autocomplete="email" required>
+            </label>
+          </div>
+          <label>Firma <small>(optional)</small>
+            <input type="text" name="firma" autocomplete="organization">
+          </label>
+          <label>Interesse an
+            <select name="interesse" id="interestSelect">
+              <option>Noch unsicher — Beratung gewünscht</option>
+              <option>Starter-Paket (CHF 490/Mt)</option>
+              <option>Business-Paket (CHF 990/Mt)</option>
+              <option>Premium-Paket (CHF 1'990/Mt)</option>
+              <option>Einzelprojekt</option>
+            </select>
+          </label>
+          <label>Nachricht
+            <textarea name="nachricht" rows="5" required></textarea>
+          </label>
+          <button type="submit" class="btn btn--solid btn--full" id="submitBtn">Nachricht senden</button>
+          <p class="form__note">Wir antworten innerhalb von 24h. Deine Daten werden vertraulich behandelt.</p>
+
+          <div class="form__success" id="formSuccess" hidden>
+            <h3>Nachricht gesendet!</h3>
+            <p>Danke für deine Anfrage. Wir melden uns innerhalb von 24 Stunden bei dir.</p>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <!-- ====================== BRANDMARK ====================== -->
+    <section class="brandmark" aria-label="KapPrompt">
+      <img class="brandmark__logo reveal" src="logo-full.png" alt="KapPrompt" loading="lazy">
+    </section>
+
+  </main>
+
+  <!-- ====================== FOOTER ====================== -->
+  <footer class="footer">
+    <div class="footer__inner">
+      <div class="footer__brand">
+        <a href="#top" class="nav__brand"><img src="logo-small.png" alt="" width="30" height="31"><span>Kap<em>Prompt</em></span></a>
+        <p>KI-gestützte Lösungen für Content, Dokumente und Web-Tools. Für KMUs in der Ostschweiz und darüber hinaus.</p>
+      </div>
+      <nav aria-label="Services">
+        <h4>Services</h4>
+        <a href="#services">Content &amp; Texte</a>
+        <a href="#services">Dokumente &amp; Decks</a>
+        <a href="#services">Web-Tools &amp; Apps</a>
+        <a href="#services">KI-Beratung</a>
+      </nav>
+      <nav aria-label="Unternehmen">
+        <h4>Unternehmen</h4>
+        <a href="#process">So läuft's ab</a>
+        <a href="#pricing">Pakete &amp; Preise</a>
+        <a href="impressum.html">Impressum</a>
+        <a href="datenschutz.html">Datenschutz</a>
+      </nav>
+      <nav aria-label="Kontakt">
+        <h4>Kontakt</h4>
+        <a href="mailto:gian@kapprompt.ch">gian@kapprompt.ch</a>
+        <a href="#contact">Anfrage senden</a>
+        <span>Kanton St. Gallen, Schweiz</span>
+      </nav>
+    </div>
+    <div class="footer__base">
+      <span>© 2026 KapPrompt — Ein Projekt von Gian Kappeler</span>
+      <span><a href="impressum.html">Impressum</a> · <a href="datenschutz.html">Datenschutz</a></span>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
