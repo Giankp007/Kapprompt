@@ -1,0 +1,146 @@
+/* ============================================================
+   KAPPROMPT — 3D / Motion Showcase (scroll-driven)
+   Pinned sticky sections: the 3D canvas stays while you scroll,
+   narrative copy crossfades, the scenes animate from scrollProgress.
+   Tokens: #000 #202020 #333 #f5f5f0 #fff · accent #faae33 / #e2ff70
+   ============================================================ */
+.sc{
+  --ink:#f5f5f0;--mut:#b6ad9d;--line:rgba(245,245,240,.14);
+  --warm:#faae33;--lime:#e2ff70;
+  position:relative;color:var(--ink);
+}
+
+/* ---- pinned scroll mechanics ---- */
+.sc-pin{height:320vh;}
+.sc-pin-tall{height:440vh;}
+.sc-sticky{position:sticky;top:0;height:100svh;overflow:hidden;}
+.sc-sticky canvas{position:absolute;inset:0;display:block;width:100%!important;height:100%!important;}
+
+/* warm, open backdrops behind the (alpha) canvases */
+.sc-can .sc-sticky{background:radial-gradient(125% 95% at 62% 42%,#1c1813 0%,#0c0a08 72%);}
+.sc-room .sc-sticky{background:linear-gradient(180deg,#2a2016 0%,#160f0a 100%);}
+.sc-float .sc-sticky{background:radial-gradient(130% 105% at 48% 46%,#15120f 0%,#070707 82%);}
+
+/* cinematic vignette over the 3D scenes (keeps focus, premium framing) */
+.sc-sticky::before{content:"";position:absolute;inset:0;z-index:2;pointer-events:none;
+  box-shadow:inset 0 0 220px 50px rgba(0,0,0,.55);}
+.sc-sticky.no-webgl::before{box-shadow:none;}
+
+/* webgl fallback */
+.sc-sticky.no-webgl{display:flex;align-items:center;justify-content:center;}
+.sc-sticky.no-webgl::after{content:attr(data-fallback);color:var(--mut);max-width:34ch;
+  font-size:14px;letter-spacing:.02em;text-align:center;padding:24px;line-height:1.6;}
+
+/* ---- narrative copy overlay (crossfaded by JS via scrollProgress) ---- */
+.sc-overlay{position:absolute;inset:0;z-index:3;pointer-events:none;}
+.sc-step{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;
+  padding-inline:clamp(26px,7vw,120px);will-change:opacity,transform;opacity:0;}
+.sc-step>*{max-width:min(48ch,40vw);}
+.sc-overlay-right .sc-step{align-items:flex-end;text-align:right;}
+.sc-overlay-right .sc-step>*{margin-left:auto;}
+
+.sc .chapter{color:var(--mut);}
+.sc-step h2{font-weight:600;font-size:clamp(2.6rem,6.5vw,5.2rem);line-height:.94;
+  letter-spacing:-.045em;}
+.sc-step h2 em{font-style:normal;color:var(--warm);}
+.sc-step h2 .lime{color:var(--lime);}
+.sc-step .lede{margin-top:20px;font-size:clamp(1.02rem,1.4vw,1.22rem);color:var(--mut);
+  line-height:1.6;letter-spacing:-.01em;}
+.sc-cue{display:inline-flex;align-items:center;gap:9px;margin-top:30px;
+  font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--mut);}
+.sc-cue::after{content:"";width:1px;height:26px;background:linear-gradient(var(--warm),transparent);
+  animation:scDrift 1.8s ease-in-out infinite;}
+@keyframes scDrift{0%,100%{opacity:.3;transform:scaleY(.7)}50%{opacity:1;transform:scaleY(1)}}
+
+/* the living room has bright walls — its overlay text must be DARK to read */
+.sc-overlay-room .sc-step h2,
+.sc-overlay-room .sc-step .lede,
+.sc-overlay-room .sc-step .chapter{
+  color:#1c150d;
+  text-shadow:0 1px 22px rgba(248,242,230,.7),0 0 2px rgba(248,242,230,.6);
+}
+.sc-overlay-room .sc-step h2 em{color:#a4560f;}
+.sc-overlay-room .sc-step .chapter{color:#5a4a36;}
+
+@media(max-width:820px){
+  .sc-pin{height:240vh;}
+  .sc-pin-tall{height:300vh;}
+  .sc-step>*{max-width:84vw;}
+  .sc-overlay-right .sc-step{align-items:flex-start;text-align:left;}
+  .sc-overlay-right .sc-step>*{margin-left:0;}
+}
+
+/* ============================================================
+   INTERACTIVE FIGURE (Spline robot, follows the mouse)
+   ============================================================ */
+.sc-robot{background:radial-gradient(120% 90% at 50% 0%,#1c1813 0%,#0b0a08 70%);
+  padding-block:clamp(96px,15vh,180px);overflow:hidden;}
+.sc-robot .grid{display:grid;grid-template-columns:1fr 1.05fr;gap:clamp(32px,5vw,72px);align-items:center;}
+.sc-robot .chapter{color:var(--mut);}
+.sc-robot h2{font-weight:600;font-size:clamp(2.6rem,6vw,4.6rem);line-height:.96;
+  letter-spacing:-.045em;max-width:14ch;}
+.sc-robot h2 em{font-style:normal;color:var(--warm);}
+.sc-robot .lede{margin-top:20px;font-size:clamp(1.02rem,1.4vw,1.2rem);color:var(--mut);
+  max-width:46ch;line-height:1.6;letter-spacing:-.01em;}
+.sc-robot .stage{position:relative;height:clamp(440px,64vh,680px);border-radius:10px;overflow:hidden;
+  background:radial-gradient(120% 95% at 50% 30%,#15110d 0%,#070707 78%);
+  border:1px solid rgba(245,245,240,.08);}
+.sc-robot .stage .fb{position:absolute;inset:0;z-index:0;display:flex;align-items:center;justify-content:center;
+  color:var(--mut);font-size:13px;letter-spacing:.05em;text-align:center;padding:0 24px;}
+.sc-robot .stage spline-viewer{position:absolute;inset:0;z-index:1;width:100%!important;height:100%!important;}
+.sc-robot .stage canvas{width:100%!important;height:100%!important;}
+.sc-robot .stage .cover{position:absolute;right:8px;bottom:8px;z-index:2;width:150px;height:34px;
+  border-radius:9px;background:#080808;}
+@media(max-width:900px){
+  .sc-robot .grid{grid-template-columns:1fr;gap:30px;}
+  .sc-robot .grid>.copy{order:-1;}
+}
+
+/* ============================================================
+   PERSPECTIVE HIGHLIGHT CARDS (normal flow, not pinned)
+   ============================================================ */
+.sc-cards{background:linear-gradient(180deg,#0d0b0a 0%,#161310 100%);
+  padding-block:clamp(96px,15vh,180px);overflow:hidden;}
+.sc-cards .wrap{position:relative;z-index:2;}
+.sc-cards .chapter{color:var(--mut);}
+.sc-cards h2{font-weight:600;font-size:clamp(2.6rem,7vw,5rem);line-height:.94;
+  letter-spacing:-.045em;max-width:16ch;}
+.sc-cards h2 em{font-style:normal;color:var(--warm);}
+.sc-cards .lede{margin-top:20px;font-size:clamp(1.02rem,1.4vw,1.2rem);color:var(--mut);
+  max-width:50ch;line-height:1.6;letter-spacing:-.01em;}
+.sc-cards .deck{margin-top:clamp(40px,6vh,72px);display:grid;
+  grid-template-columns:repeat(3,1fr);gap:18px;perspective:1400px;}
+
+.phc{position:relative;border-radius:10px;padding:30px 28px;min-height:300px;
+  background:linear-gradient(180deg,#1b1714 0%,#100d0b 100%);
+  border:1px solid rgba(245,245,240,.10);
+  display:flex;flex-direction:column;
+  transform-style:preserve-3d;will-change:transform;
+  transform:perspective(1200px) rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg));
+  transition:transform .5s cubic-bezier(.2,.7,.2,1),border-color .4s;}
+.phc.is-live{transition:border-color .4s;border-color:rgba(245,245,240,.2);}
+.phc::before{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;z-index:1;
+  background:radial-gradient(420px circle at var(--mx,50%) var(--my,50%),rgba(255,240,210,.12),transparent 55%);
+  opacity:0;transition:opacity .4s;}
+.phc.is-live::before{opacity:1;}
+.phc::after{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;z-index:1;
+  box-shadow:
+    inset 6px 0 14px -10px rgba(250,174,51,calc(var(--gl,0)*.9)),
+    inset -6px 0 14px -10px rgba(250,174,51,calc(var(--gr,0)*.9)),
+    inset 0 6px 14px -10px rgba(226,255,112,calc(var(--gt,0)*.9)),
+    inset 0 -6px 14px -10px rgba(226,255,112,calc(var(--gb,0)*.9));
+  transition:box-shadow .35s;}
+.phc>*{position:relative;z-index:2;transform:translateZ(40px);}
+.phc .ix{width:42px;height:42px;border-radius:9999px;display:grid;place-items:center;
+  background:rgba(245,245,240,.06);border:1px solid var(--line);margin-bottom:auto;}
+.phc .ix svg{width:20px;height:20px;stroke:var(--ink);fill:none;stroke-width:1.6;}
+.phc .kf{font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;
+  color:var(--warm);margin-top:26px;}
+.phc h3{margin-top:10px;font-size:1.5rem;line-height:1.05;letter-spacing:-.03em;font-weight:600;}
+.phc p{margin-top:10px;font-size:14.5px;line-height:1.55;color:var(--mut);}
+@media(max-width:900px){.sc-cards .deck{grid-template-columns:1fr;}}
+
+@media (prefers-reduced-motion:reduce){
+  .phc{transform:none!important;transition:none;}
+  .sc-cue::after{animation:none;}
+}

@@ -1,73 +1,111 @@
 <!DOCTYPE html>
-<html lang="de-CH">
+<html lang="de">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Datenschutz — KapPrompt</title>
-  <meta name="robots" content="noindex">
-  <link rel="icon" type="image/png" href="favicon.png">
-  <link rel="stylesheet" href="styles.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Datenschutz — Kapprompt</title>
+<meta name="description" content="Datenschutzerklärung zu kapprompt.ch nach schweizerischem Datenschutzgesetz (revDSG).">
+<meta name="robots" content="index,follow">
+<link rel="icon" type="image/png" href="assets/img/logo.png">
+<link rel="preload" as="font" type="font/woff2" href="assets/fonts/inter-400.woff2" crossorigin>
+<style>
+  @font-face{font-family:'Inter';font-weight:400;font-display:swap;src:url('assets/fonts/inter-400.woff2') format('woff2');}
+  @font-face{font-family:'Inter';font-weight:600;font-display:swap;src:url('assets/fonts/inter-600.woff2') format('woff2');}
+  @font-face{font-family:'Inter';font-weight:700;font-display:swap;src:url('assets/fonts/inter-700.woff2') format('woff2');}
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+  :root{--ink:#f5f5f0;--mut:#b6ad9d;--warm:#faae33;--line:rgba(245,245,240,.12);}
+  body{font-family:'Inter',system-ui,-apple-system,'Segoe UI',sans-serif;background:#0b0a08;color:var(--ink);
+    line-height:1.65;-webkit-font-smoothing:antialiased;}
+  a{color:var(--warm);text-decoration:none;}
+  a:hover{text-decoration:underline;}
+  .bar{position:sticky;top:0;z-index:10;display:flex;align-items:center;justify-content:space-between;
+    padding:16px clamp(20px,5vw,64px);background:rgba(11,10,8,.78);backdrop-filter:blur(12px);
+    border-bottom:1px solid var(--line);}
+  .bar .brand{display:flex;align-items:center;gap:9px;font-weight:700;font-size:15px;color:var(--ink);}
+  .bar .brand img{height:22px;}
+  .bar .brand .p{font-weight:400;color:var(--warm);}
+  .bar .home{font-size:14px;color:var(--mut);}
+  main{max-width:760px;margin-inline:auto;padding:clamp(48px,9vh,110px) clamp(20px,5vw,40px) 80px;}
+  .eyebrow{font-size:12px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--mut);}
+  h1{font-size:clamp(2.2rem,5vw,3.2rem);line-height:1.02;letter-spacing:-.04em;margin:14px 0 8px;font-weight:700;}
+  h2{font-size:1.25rem;letter-spacing:-.02em;margin:38px 0 10px;font-weight:600;}
+  h3{font-size:1rem;margin:22px 0 6px;font-weight:600;color:var(--ink);}
+  p{color:var(--mut);margin:10px 0;}
+  ul{color:var(--mut);margin:10px 0 10px 22px;}
+  li{margin:6px 0;}
+  .card{margin-top:26px;padding:24px 26px;border:1px solid var(--line);border-radius:10px;
+    background:linear-gradient(180deg,#16130f,#100d0b);}
+  .card p{color:var(--ink);}
+  .muted{font-size:14px;color:var(--mut);}
+  footer{border-top:1px solid var(--line);padding:28px clamp(20px,5vw,40px);text-align:center;color:var(--mut);font-size:13px;}
+  footer a{color:var(--mut);}
+</style>
 </head>
 <body>
+<header class="bar">
+  <a class="brand" href="index.html"><img src="assets/img/logo.png" alt=""><span>Kap<span class="p">prompt</span></span></a>
+  <a class="home" href="index.html">← Zur Startseite</a>
+</header>
 
-  <header class="nav scrolled">
-    <div class="nav__inner">
-      <a href="index.html" class="nav__brand" aria-label="KapPrompt — zur Startseite">
-        <img src="logo-small.png" alt="" width="34" height="35">
-        <span>Kap<em>Prompt</em></span>
-      </a>
-      <nav class="nav__links" id="navLinks" aria-label="Hauptnavigation">
-        <a href="index.html#services">Services</a>
-        <a href="index.html#pricing">Pakete</a>
-        <a href="index.html#contact" class="btn btn--small btn--solid">Kontakt</a>
-      </nav>
-      <button class="nav__burger" id="navToggle" aria-expanded="false" aria-controls="navLinks" aria-label="Menü öffnen">
-        <span></span><span></span>
-      </button>
-    </div>
-  </header>
+<main>
+  <span class="eyebrow">Rechtliches</span>
+  <h1>Datenschutzerklärung</h1>
+  <p>Diese Erklärung beschreibt, wie auf dieser Website mit Personendaten umgegangen wird —
+  nach dem schweizerischen Datenschutzgesetz (revDSG).</p>
 
-  <main class="legal">
-    <h1>Datenschutzerklärung</h1>
-    <p class="legal__updated">Stand: April 2026</p>
+  <div class="card">
+    <p><strong>Verantwortliche Stelle</strong></p>
+    <p>Gian Kappeler · Kapprompt</p>
+    <p>E-Mail: <a href="mailto:mail@gian-kappeler.ch">mail@gian-kappeler.ch</a></p>
+  </div>
 
-    <h2><span class="legal__no">1.</span>Allgemeine Hinweise</h2>
-    <p>Der Schutz deiner persönlichen Daten ist uns wichtig. Diese Datenschutzerklärung informiert dich über die Art, den Umfang und den Zweck der Verarbeitung von personenbezogenen Daten auf kapprompt.ch.</p>
-    <p>Verantwortlich:<br>
-    Gian Kappeler, Mettlenstrasse 19, 9523 Züberwangen, St. Gallen, Schweiz<br>
-    E-Mail: <a href="mailto:gian@kapprompt.ch">gian@kapprompt.ch</a></p>
+  <h2>Grundsatz</h2>
+  <p>Diese Website ist als reine Informations- und Schaufensterseite aufgebaut. Sie
+  <strong>setzt keine Cookies</strong>, nutzt <strong>keine Tracking-, Analyse- oder
+  Werbedienste</strong> und führt <strong>keine Benutzerkonten</strong>. Schriften, Bilder und
+  Skripte sind, soweit möglich, lokal eingebunden.</p>
 
-    <h2><span class="legal__no">2.</span>Erhebung und Speicherung personenbezogener Daten</h2>
-    <p>Beim Besuch unserer Website werden automatisch durch den Hosting-Provider Server-Logfiles erhoben (besuchte Seite, Datum/Uhrzeit, Browsertyp, Betriebssystem, Referrer URL, IP-Adresse). Eine Zuordnung zu bestimmten Personen findet nicht statt.</p>
+  <h2>Server-Logfiles (Hosting)</h2>
+  <p>Die Website wird bei <strong>Vercel Inc.</strong> (USA) gehostet. Beim Aufruf der Seite
+  verarbeitet der Hosting-Anbieter technisch notwendige Verbindungsdaten (z. B. IP-Adresse,
+  Datum und Uhrzeit des Zugriffs, abgerufene Datei, Browsertyp). Diese Daten dienen ausschliesslich
+  dem sicheren und stabilen Betrieb der Website und werden nicht zur Identifikation einzelner
+  Personen verwendet. Rechtsgrundlage ist das berechtigte Interesse am Betrieb der Website.</p>
 
-    <h2><span class="legal__no">3.</span>Kontaktformular und E-Mail</h2>
-    <p>Wenn du unser Kontaktformular nutzt oder uns per E-Mail kontaktierst, werden die übermittelten Daten (Name, E-Mail, Nachricht) gespeichert, um deine Anfrage zu bearbeiten. Diese Daten werden ohne deine Einwilligung nicht an Dritte weitergegeben. Für die Übermittlung des Kontaktformulars nutzen wir den Dienst Formspree (formspree.io). Deren Datenschutzbestimmungen findest du unter <a href="https://formspree.io/legal/privacy-policy" rel="noopener" target="_blank">formspree.io/legal/privacy-policy</a>.</p>
+  <h2>Externe Inhalte (3D-Darstellung)</h2>
+  <p>Für die interaktiven 3D-Szenen werden beim Seitenaufruf folgende externe Ressourcen geladen.
+  Dabei wird deine IP-Adresse technisch bedingt an die jeweiligen Server übermittelt:</p>
+  <ul>
+    <li><strong>jsDelivr</strong> (Open-Source-CDN) — lädt die 3D-Bibliothek Three.js.</li>
+    <li><strong>Spline</strong> (spline.design) — lädt die interaktive 3D-Figur.</li>
+  </ul>
+  <p>Über diese Anbieter werden keine Daten von uns gespeichert; es gelten deren jeweilige
+  Datenschutzbestimmungen. Wer keine externen Verbindungen wünscht, kann diese über einen
+  Skript-/Inhaltsblocker im Browser unterbinden — die übrige Seite bleibt nutzbar.</p>
 
-    <h2><span class="legal__no">4.</span>Cookies</h2>
-    <p>Unsere Website verwendet derzeit keine Cookies.</p>
+  <h2>Kontaktaufnahme</h2>
+  <p>Wenn du uns per E-Mail kontaktierst, werden deine Angaben (E-Mail-Adresse, Inhalt der
+  Nachricht) ausschliesslich zur Bearbeitung deiner Anfrage verwendet und nicht an Dritte
+  weitergegeben.</p>
 
-    <h2><span class="legal__no">5.</span>Analyse-Tools</h2>
-    <p>Unsere Website verwendet derzeit keine Analyse-Tools von Drittanbietern.</p>
+  <h2>Keine Weitergabe</h2>
+  <p>Es werden keine Personendaten verkauft oder zu Werbezwecken an Dritte weitergegeben.</p>
 
-    <h2><span class="legal__no">6.</span>Deine Rechte</h2>
-    <p>Gemäss dem Schweizer Datenschutzgesetz (DSG) hast du das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung und Datenübertragbarkeit. Kontakt: <a href="mailto:gian@kapprompt.ch">gian@kapprompt.ch</a></p>
+  <h2>Deine Rechte</h2>
+  <p>Im Rahmen des anwendbaren Datenschutzrechts hast du das Recht auf Auskunft, Berichtigung und
+  Löschung deiner bei uns bearbeiteten Personendaten sowie das Recht, eine Bearbeitung einzuschränken
+  oder ihr zu widersprechen. Wende dich dazu an die oben genannte E-Mail-Adresse.</p>
 
-    <h2><span class="legal__no">7.</span>SSL-Verschlüsselung</h2>
-    <p>Unsere Website nutzt SSL-Verschlüsselung für eine sichere Datenübertragung.</p>
+  <h2>Änderungen</h2>
+  <p>Diese Datenschutzerklärung kann angepasst werden, um sie an geänderte rechtliche oder
+  technische Gegebenheiten anzupassen. Es gilt jeweils die hier veröffentlichte Fassung.</p>
 
-    <h2><span class="legal__no">8.</span>Änderungen</h2>
-    <p>Wir behalten uns vor, diese Datenschutzerklärung jederzeit anzupassen.</p>
+  <p class="muted" style="margin-top:34px;">Stand: Juni 2026</p>
+</main>
 
-    <a href="index.html" class="btn btn--ghost">← Zurück zur Startseite</a>
-  </main>
-
-  <footer class="footer">
-    <div class="footer__base">
-      <span>© 2026 KapPrompt — Ein Projekt von Gian Kappeler</span>
-      <span><a href="impressum.html">Impressum</a> · <a href="datenschutz.html">Datenschutz</a></span>
-    </div>
-  </footer>
-
-  <script src="script.js"></script>
+<footer>
+  © 2026 Kapprompt · <a href="index.html">Startseite</a> · <a href="impressum.html">Impressum</a> ·
+  <a href="mailto:mail@gian-kappeler.ch">mail@gian-kappeler.ch</a>
+</footer>
 </body>
 </html>

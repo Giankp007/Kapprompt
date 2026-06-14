@@ -1,70 +1,89 @@
 <!DOCTYPE html>
-<html lang="de-CH">
+<html lang="de">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Impressum — KapPrompt</title>
-  <meta name="robots" content="noindex">
-  <link rel="icon" type="image/png" href="favicon.png">
-  <link rel="stylesheet" href="styles.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Impressum — Kapprompt</title>
+<meta name="description" content="Impressum und rechtliche Angaben zu kapprompt.ch.">
+<meta name="robots" content="index,follow">
+<link rel="icon" type="image/png" href="assets/img/logo.png">
+<link rel="preload" as="font" type="font/woff2" href="assets/fonts/inter-400.woff2" crossorigin>
+<style>
+  @font-face{font-family:'Inter';font-weight:400;font-display:swap;src:url('assets/fonts/inter-400.woff2') format('woff2');}
+  @font-face{font-family:'Inter';font-weight:600;font-display:swap;src:url('assets/fonts/inter-600.woff2') format('woff2');}
+  @font-face{font-family:'Inter';font-weight:700;font-display:swap;src:url('assets/fonts/inter-700.woff2') format('woff2');}
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+  :root{--ink:#f5f5f0;--mut:#b6ad9d;--warm:#faae33;--line:rgba(245,245,240,.12);}
+  body{font-family:'Inter',system-ui,-apple-system,'Segoe UI',sans-serif;background:#0b0a08;color:var(--ink);
+    line-height:1.65;-webkit-font-smoothing:antialiased;}
+  a{color:var(--warm);text-decoration:none;}
+  a:hover{text-decoration:underline;}
+  .bar{position:sticky;top:0;z-index:10;display:flex;align-items:center;justify-content:space-between;
+    padding:16px clamp(20px,5vw,64px);background:rgba(11,10,8,.78);backdrop-filter:blur(12px);
+    border-bottom:1px solid var(--line);}
+  .bar .brand{display:flex;align-items:center;gap:9px;font-weight:700;font-size:15px;color:var(--ink);}
+  .bar .brand img{height:22px;}
+  .bar .brand .p{font-weight:400;color:var(--warm);}
+  .bar .home{font-size:14px;color:var(--mut);}
+  main{max-width:760px;margin-inline:auto;padding:clamp(48px,9vh,110px) clamp(20px,5vw,40px) 80px;}
+  .eyebrow{font-size:12px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--mut);}
+  h1{font-size:clamp(2.2rem,5vw,3.2rem);line-height:1.02;letter-spacing:-.04em;margin:14px 0 8px;font-weight:700;}
+  h2{font-size:1.25rem;letter-spacing:-.02em;margin:38px 0 10px;font-weight:600;}
+  p{color:var(--mut);margin:10px 0;}
+  .card{margin-top:26px;padding:24px 26px;border:1px solid var(--line);border-radius:10px;
+    background:linear-gradient(180deg,#16130f,#100d0b);}
+  .card p{color:var(--ink);}
+  .muted{font-size:14px;color:var(--mut);}
+  footer{border-top:1px solid var(--line);padding:28px clamp(20px,5vw,40px);text-align:center;color:var(--mut);font-size:13px;}
+  footer a{color:var(--mut);}
+</style>
 </head>
 <body>
+<header class="bar">
+  <a class="brand" href="index.html"><img src="assets/img/logo.png" alt=""><span>Kap<span class="p">prompt</span></span></a>
+  <a class="home" href="index.html">← Zur Startseite</a>
+</header>
 
-  <header class="nav scrolled">
-    <div class="nav__inner">
-      <a href="index.html" class="nav__brand" aria-label="KapPrompt — zur Startseite">
-        <img src="logo-small.png" alt="" width="34" height="35">
-        <span>Kap<em>Prompt</em></span>
-      </a>
-      <nav class="nav__links" id="navLinks" aria-label="Hauptnavigation">
-        <a href="index.html#services">Services</a>
-        <a href="index.html#pricing">Pakete</a>
-        <a href="index.html#contact" class="btn btn--small btn--solid">Kontakt</a>
-      </nav>
-      <button class="nav__burger" id="navToggle" aria-expanded="false" aria-controls="navLinks" aria-label="Menü öffnen">
-        <span></span><span></span>
-      </button>
-    </div>
-  </header>
+<main>
+  <span class="eyebrow">Rechtliches</span>
+  <h1>Impressum</h1>
+  <p>Angaben gemäss schweizerischem Recht (Art. 3 Abs. 1 lit. s UWG).</p>
 
-  <main class="legal">
-    <h1>Impressum</h1>
+  <div class="card">
+    <p><strong>Kapprompt</strong></p>
+    <p>Gian Kappeler</p>
+    <p>E-Mail: <a href="mailto:mail@gian-kappeler.ch">mail@gian-kappeler.ch</a></p>
+  </div>
 
-    <h2>Angaben gemäss Art. 3 UWG / Art. 12 OR</h2>
-    <address>
-      <b>KapPrompt</b><br>
-      Gian Kappeler<br>
-      Mettlenstrasse 19<br>
-      9523 Züberwangen<br>
-      St. Gallen, Schweiz
-    </address>
+  <h2>Verantwortlich für den Inhalt</h2>
+  <p>Gian Kappeler, erreichbar unter der oben genannten E-Mail-Adresse.</p>
 
-    <h2>Kontakt</h2>
-    <p>E-Mail: <a href="mailto:gian@kapprompt.ch">gian@kapprompt.ch</a><br>
-    Telefon: <a href="tel:+41775255749">077 525 57 49</a></p>
+  <h2>Haftung für Inhalte</h2>
+  <p>Die Inhalte dieser Website wurden mit grösstmöglicher Sorgfalt erstellt. Für die Richtigkeit,
+  Vollständigkeit und Aktualität der Inhalte wird jedoch keine Gewähr übernommen. Diese Seite dient
+  als Schaufenster aktueller Möglichkeiten künstlicher Intelligenz und stellt keine Beratung dar.</p>
 
-    <h2>Verantwortlich für den Inhalt</h2>
-    <p>Gian Kappeler, Adresse wie oben</p>
+  <h2>Haftung für Links</h2>
+  <p>Diese Website lädt zur Darstellung der 3D-Inhalte externe Ressourcen nach (siehe
+  <a href="datenschutz.html">Datenschutzerklärung</a>). Für die Inhalte verlinkter oder
+  eingebundener externer Seiten sind ausschliesslich deren Betreiber verantwortlich. Zum Zeitpunkt
+  der Einbindung waren keine rechtswidrigen Inhalte erkennbar.</p>
 
-    <h2>Haftungsausschluss</h2>
-    <p>Der Autor übernimmt keinerlei Gewähr hinsichtlich der inhaltlichen Richtigkeit, Genauigkeit, Aktualität, Zuverlässigkeit und Vollständigkeit der Informationen. Haftungsansprüche gegen den Autor wegen Schäden materieller oder immaterieller Art, welche aus dem Zugriff oder der Nutzung bzw. Nichtnutzung der veröffentlichten Informationen entstanden sind, werden ausgeschlossen.</p>
+  <h2>Urheberrecht</h2>
+  <p>Die von Kapprompt erstellten Inhalte und 3D-Szenen (Produkt, Wohnzimmer, schwebende Objekte,
+  Perspektiv-Karten) unterliegen dem schweizerischen Urheberrecht. Die interaktive 3D-Figur sowie
+  die kinematische Fahrzeugsequenz stammen aus öffentlichen Demos Dritter; die jeweiligen Marken-,
+  Bild- und Urheberrechte verbleiben bei deren Inhabern.</p>
 
-    <h2>Haftung für Links</h2>
-    <p>Verweise und Links auf Webseiten Dritter liegen ausserhalb unseres Verantwortungsbereichs. Es wird jegliche Verantwortung für solche Webseiten abgelehnt.</p>
+  <h2>Schriften</h2>
+  <p class="muted">Inter, Instrument Serif und Anton — alle unter der SIL Open Font License.</p>
 
-    <h2>Urheberrechte</h2>
-    <p>Die Urheber- und alle anderen Rechte an Inhalten, Bildern, Fotos oder anderen Dateien auf dieser Website gehören ausschliesslich KapPrompt bzw. den speziell genannten Rechteinhabern. Für die Reproduktion jeglicher Elemente ist die schriftliche Zustimmung im Voraus einzuholen.</p>
+  <p class="muted" style="margin-top:34px;">Stand: Juni 2026</p>
+</main>
 
-    <a href="index.html" class="btn btn--ghost">← Zurück zur Startseite</a>
-  </main>
-
-  <footer class="footer">
-    <div class="footer__base">
-      <span>© 2026 KapPrompt — Ein Projekt von Gian Kappeler</span>
-      <span><a href="impressum.html">Impressum</a> · <a href="datenschutz.html">Datenschutz</a></span>
-    </div>
-  </footer>
-
-  <script src="script.js"></script>
+<footer>
+  © 2026 Kapprompt · <a href="index.html">Startseite</a> · <a href="datenschutz.html">Datenschutz</a> ·
+  <a href="mailto:mail@gian-kappeler.ch">mail@gian-kappeler.ch</a>
+</footer>
 </body>
 </html>

@@ -1,454 +1,242 @@
 <!DOCTYPE html>
-<html lang="de-CH">
+<html lang="de">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>KapPrompt — KI-Lösungen für dein Business</title>
-  <meta name="description" content="KapPrompt liefert KI-gestützten Content, Dokumente und Web-Tools für KMUs in der Ostschweiz. Schneller, günstiger, besser.">
-  <meta property="og:title" content="KapPrompt — KI-Lösungen für dein Business">
-  <meta property="og:description" content="Content, Dokumente und massgeschneiderte Web-Tools — produziert mit modernster KI. Schneller und günstiger als jede klassische Agentur.">
-  <meta property="og:image" content="logo.png">
-  <link rel="icon" type="image/png" href="favicon.png">
-  <link rel="stylesheet" href="styles.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kapprompt — Eine Reise durch die Welt der KI</title>
+<meta name="description" content="Ein Schaufenster dafür, was künstliche Intelligenz heute schon kann. Scroll dich durch.">
+<meta name="theme-color" content="#02030a">
+<meta property="og:title" content="Kapprompt — Eine Reise durch die Welt der KI">
+<meta property="og:description" content="Was KI heute schon kann, grenzt an Magie. Scroll dich durch.">
+<meta property="og:image" content="assets/img/logo.png">
+<link rel="icon" type="image/png" href="assets/img/logo.png">
+<link rel="preload" as="font" type="font/woff2" href="assets/fonts/inter-200.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="assets/fonts/anton-400.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="assets/fonts/instrument-serif-400.woff2" crossorigin>
+<link rel="preload" as="image" href="assets/frames/0001.webp">
+<link rel="stylesheet" href="assets/css/styles.css">
+<link rel="stylesheet" href="assets/css/showcase.css?v=3">
+<script type="importmap">
+{
+  "imports": {
+    "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+    "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+  }
+}
+</script>
+<script type="module" src="https://unpkg.com/@splinetool/viewer/build/spline-viewer.js"></script>
 </head>
 <body>
 
-  <a class="skip-link" href="#main">Zum Inhalt springen</a>
+<!-- NAV -->
+<header class="nav">
+  <a class="brand" href="#top"><img src="assets/img/logo.png" alt=""><span>Kap<span class="p">prompt</span></span></a>
+  <nav class="links">
+    <a href="#amber">Was KI kann</a>
+    <a href="#produkt">Produkt</a>
+    <a href="#showroom">Zuhause</a>
+    <a href="#robot">Interaktiv</a>
+    <a href="#kino">Kino</a>
+  </nav>
+</header>
 
-  <!-- ====================== NAV ====================== -->
-  <header class="nav" id="top">
-    <div class="nav__inner">
-      <a href="#top" class="nav__brand" aria-label="KapPrompt — zur Startseite">
-        <img src="logo-small.png" alt="" width="34" height="35">
-        <span>Kap<em>Prompt</em></span>
-      </a>
-      <nav class="nav__links" id="navLinks" aria-label="Hauptnavigation">
-        <a href="#services">Services</a>
-        <a href="#process">Ablauf</a>
-        <a href="#pricing">Pakete</a>
-        <a href="#faq">FAQ</a>
-        <a href="#contact" class="btn btn--small btn--solid">Jetzt starten</a>
-      </nav>
-      <button class="nav__burger" id="navToggle" aria-expanded="false" aria-controls="navLinks" aria-label="Menü öffnen">
-        <span></span><span></span>
-      </button>
-    </div>
-  </header>
+<main id="top">
 
-  <main id="main">
-
-    <!-- ====================== HERO + CONTAINER SCROLL ====================== -->
-    <section class="hero" id="heroStage" aria-label="Intro">
-      <div class="hero__glow" aria-hidden="true"></div>
-      <div class="hero__grid" aria-hidden="true"></div>
-
-      <div class="hero__perspective">
-
-        <!-- title component (translates up on scroll) -->
-        <div class="hero__head" id="heroHead">
-          <p class="eyebrow reveal">KI-Agentur · Kanton St.&nbsp;Gallen &amp; Ostschweiz</p>
-          <h1 class="hero__title reveal" style="--d:.06s">
-            Dein Content. Deine Tools.<br>
-            <span class="hero__big">Alles <em>KI.</em></span>
-          </h1>
-          <p class="hero__sub reveal" style="--d:.12s">
-            Content, Dokumente und massgeschneiderte Web-Tools — produziert mit
-            modernster KI. Schneller und günstiger als jede klassische Agentur.
-          </p>
-          <div class="hero__cta reveal" style="--d:.18s">
-            <a href="#contact" class="btn btn--solid">Kostenlos anfragen</a>
-            <a href="#services" class="btn btn--ghost">Entdecken</a>
-          </div>
-          <ul class="hero__trust reveal" style="--d:.24s">
-            <li>Kostenloses Erstgespräch</li>
-            <li>Lieferung in wenigen Tagen</li>
-            <li>Persönlicher Kontakt</li>
-          </ul>
-        </div>
-
-        <!-- 3D card (rotateX 20° → 0° on scroll) -->
-        <div class="device" id="device">
-          <div class="device__screen">
-            <div class="mock" aria-hidden="true">
-              <div class="mock__bar">
-                <span class="mock__dots"><i></i><i></i><i></i></span>
-                <span class="mock__title">kapprompt — produktion</span>
-                <span class="mock__chip">{"ai": "ready"}</span>
-              </div>
-              <div class="mock__body">
-                <aside class="mock__side">
-                  <span class="mock__sidehead">Aufträge</span>
-                  <span class="mock__item is-active">Blogartikel</span>
-                  <span class="mock__item">Pitch Deck</span>
-                  <span class="mock__item">Preisrechner</span>
-                  <span class="mock__item">Newsletter</span>
-                  <span class="mock__item">Dashboard</span>
-                </aside>
-                <div class="mock__main">
-                  <div class="mock__dochead">
-                    <span class="mock__doctitle">5 KI-Tricks für Schweizer KMU</span>
-                    <span class="mock__meta"><b>SEO ✓</b> · 840 Wörter · de-CH</span>
-                  </div>
-                  <p class="mock__type"><span id="typeLine"></span><i class="caret"></i></p>
-                  <div class="mock__lines">
-                    <span style="--w:96%"></span><span style="--w:88%"></span>
-                    <span style="--w:93%"></span><span style="--w:64%"></span>
-                    <span class="mock__sub" style="--w:34%"></span>
-                    <span style="--w:90%"></span><span style="--w:97%"></span>
-                    <span style="--w:86%"></span><span style="--w:92%"></span>
-                    <span style="--w:58%"></span>
-                  </div>
-                  <div class="mock__foot">
-                    <span class="mock__gen">generate()</span>
-                    <span class="mock__progress"><i></i></span>
-                    <span class="mock__files">
-                      <b>.docx</b><b>.pdf</b><b>.pptx</b>
-                    </span>
-                  </div>
-                </div>
-                <aside class="mock__rail">
-                  <span class="mock__sidehead">Pipeline</span>
-                  <span class="mock__step is-done">Briefing</span>
-                  <span class="mock__step is-done">KI-Produktion</span>
-                  <span class="mock__step is-now">Feinschliff</span>
-                  <span class="mock__step">Lieferung</span>
-                  <span class="mock__eta">Lieferung in 2–5 Tagen</span>
-                  <span class="mock__sidehead">Output / Woche</span>
-                  <span class="mock__chart">
-                    <i style="--h:34%"></i><i style="--h:52%"></i><i style="--h:46%"></i>
-                    <i style="--h:70%"></i><i style="--h:88%"></i>
-                  </span>
-                </aside>
-              </div>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- ====================== MARQUEE ====================== -->
-    <div class="marquee" aria-hidden="true">
-      <div class="marquee__track">
-        <!-- list ×2 for seamless loop -->
-        <span>Blogartikel</span><span>SEO-Texte</span><span>Pitch Decks</span><span>Landing Pages</span><span>Web-Apps</span><span>Preisrechner</span><span>Social Media</span><span>Datenanalyse</span><span>Newsletter</span><span>Businesspläne</span><span>Dashboards</span><span>KI-Beratung</span>
-        <span>Blogartikel</span><span>SEO-Texte</span><span>Pitch Decks</span><span>Landing Pages</span><span>Web-Apps</span><span>Preisrechner</span><span>Social Media</span><span>Datenanalyse</span><span>Newsletter</span><span>Businesspläne</span><span>Dashboards</span><span>KI-Beratung</span>
+  <!-- WORLD 1 — COSMIC: brain -> earth -->
+  <section class="hero" aria-label="Start">
+    <div class="hero-sticky">
+      <canvas id="cosmos" aria-hidden="true"></canvas>
+      <div class="wrap">
+        <span class="chapter"><span class="num">01</span><span class="bar"></span>Die Reise beginnt</span>
+        <h1>Tritt ein in eine <b>neue Welt.</b></h1>
+        <p class="lede">Was künstliche Intelligenz heute schon kann, grenzt an Magie. Scroll dich nach unten — von einem Gedanken bis um die ganze Welt.</p>
       </div>
     </div>
+  </section>
 
-    <!-- ====================== STATEMENT ====================== -->
-    <section class="statement">
-      <p class="reveal">Wir bringen <em>KI-Power</em> zu kleinen und mittleren Unternehmen in&nbsp;der&nbsp;Ostschweiz.</p>
-    </section>
-
-    <!-- ====================== SERVICES (index list) ====================== -->
-    <section class="section" id="services">
-      <div class="section__head reveal">
-        <p class="eyebrow">Was wir liefern</p>
-        <h2>Alles was dein Business online braucht.<br><span class="dim">In einem Bruchteil der Zeit.</span></h2>
+  <!-- WORLD 2 — AMBER: what AI can do -->
+  <section class="amber" id="amber" aria-label="Was KI heute kann">
+    <div class="wrap">
+      <span class="chapter reveal"><span class="num">02</span><span class="bar"></span>Was KI heute kann</span>
+      <h2 class="reveal">KI macht das <span class="red">Unmögliche</span> normal.</h2>
+      <p class="lede reveal">Vor wenigen Jahren noch Science-Fiction. Heute Alltag. Eine kleine Auswahl dessen, was gerade möglich ist.</p>
+    </div>
+    <div class="amber-marquee" aria-hidden="true">
+      <div class="t">
+        <span class="f">Text → Video</span><span>Bilder aus Worten</span><span class="f">Code in Sekunden</span><span>Stimmen klonen</span><span class="f">3D-Welten</span><span>Musik</span>
+        <span class="f">Text → Video</span><span>Bilder aus Worten</span><span class="f">Code in Sekunden</span><span>Stimmen klonen</span><span class="f">3D-Welten</span><span>Musik</span>
       </div>
-
-      <ol class="index">
-        <li class="index__row reveal">
-          <span class="index__no">01</span>
-          <div class="index__body">
-            <h3>Content &amp; Texte</h3>
-            <p>Blogartikel, SEO-Texte, Social-Media-Posts, Newsletter — perfekt formuliert und in deiner Stimme geschrieben.</p>
-          </div>
-          <ul class="index__tags"><li>Blog</li><li>SEO</li><li>Newsletter</li></ul>
-        </li>
-        <li class="index__row reveal">
-          <span class="index__no">02</span>
-          <div class="index__body">
-            <h3>Dokumente &amp; Decks</h3>
-            <p>Angebote, Businesspläne, Pitch Decks, Reports — professionell formatiert und sofort einsatzbereit.</p>
-          </div>
-          <ul class="index__tags"><li>Word</li><li>PDF</li><li>PowerPoint</li></ul>
-        </li>
-        <li class="index__row reveal">
-          <span class="index__no">03</span>
-          <div class="index__body">
-            <h3>Web-Tools &amp; Apps</h3>
-            <p>Preisrechner, Buchungsformulare, Dashboards — massgeschneidert und sofort einsetzbar für dein Business.</p>
-          </div>
-          <ul class="index__tags"><li>Rechner</li><li>Formulare</li><li>Apps</li></ul>
-        </li>
-        <li class="index__row reveal">
-          <span class="index__no">04</span>
-          <div class="index__body">
-            <h3>Design &amp; Branding</h3>
-            <p>Landing Pages, E-Mail-Templates, visuelle Identität — konsistent und visuell überzeugend.</p>
-          </div>
-          <ul class="index__tags"><li>Landing</li><li>E-Mail</li><li>Branding</li></ul>
-        </li>
-        <li class="index__row reveal">
-          <span class="index__no">05</span>
-          <div class="index__body">
-            <h3>Datenaufbereitung</h3>
-            <p>Aus Rohdaten werden Insights. Bereinigung, Analyse und Visualisierung — alles aus einer Hand.</p>
-          </div>
-          <ul class="index__tags"><li>Excel</li><li>Analysen</li><li>Dashboards</li></ul>
-        </li>
-        <li class="index__row reveal">
-          <span class="index__no">06</span>
-          <div class="index__body">
-            <h3>KI-Beratung</h3>
-            <p>Wir zeigen dir, wie du KI selbst nutzen kannst. Workflows, Prompts, Tools — praxisnah und umsetzbar.</p>
-          </div>
-          <ul class="index__tags"><li>Training</li><li>Workflows</li><li>Prompts</li></ul>
-        </li>
-      </ol>
-    </section>
-
-    <!-- ====================== COMPARISON ====================== -->
-    <section class="section" id="why">
-      <div class="section__head reveal">
-        <p class="eyebrow">Warum KapPrompt</p>
-        <h2>Klassische Agentur?<br><span class="dim">Nein danke.</span></h2>
-        <p class="section__lead">Herkömmliche Agenturen brauchen Wochen und kosten Tausende. Wir liefern in Tagen — dank modernster KI, kombiniert mit menschlichem Qualitätsanspruch.</p>
+    </div>
+    <div class="wrap">
+      <div class="facts">
+        <article class="fact reveal"><div class="sheen"></div><div class="stat">200 Mio.+</div><div class="label">Proteinstrukturen</div><p class="body">KI hat die 3D-Faltung von über 200 Millionen Proteinen vorhergesagt — nahezu jedes der Wissenschaft bekannte Protein. Eine Aufgabe, an der die Forschung jahrzehntelang sass.</p></article>
+        <article class="fact reveal"><div class="sheen"></div><div class="stat">Text → Film</div><div class="label">Bewegte Bilder aus Worten</div><p class="body">Aus einer geschriebenen Beschreibung erzeugt KI fotorealistische, bewegte Szenen — ohne Kamera, ohne Set, ohne Filmteam.</p></article>
+        <article class="fact reveal"><div class="sheen"></div><div class="stat">100+</div><div class="label">Sprachen in Echtzeit</div><p class="body">Gesprochene und geschriebene Sprache wird in über hundert Sprachen übersetzt — nahezu ohne Verzögerung, mitten im Gespräch.</p></article>
+        <article class="fact reveal"><div class="sheen"></div><div class="stat">Sekunden</div><div class="label">Code, der läuft</div><p class="body">KI schreibt, erklärt und repariert Programme in dutzenden Sprachen — von der ersten Zeile bis zur fertigen Anwendung, wie dieser hier.</p></article>
       </div>
+    </div>
+  </section>
 
-      <div class="versus reveal">
-        <span class="versus__float versus__float--a">&lt;content /&gt;</span>
-        <span class="versus__float versus__float--b">generate()</span>
-        <div class="versus__col versus__col--old">
-          <h3>Klassische Agentur</h3>
-          <ul>
-            <li>2-4 Wochen Lieferzeit</li>
-            <li>Stundensätze ab CHF 150</li>
-            <li>Endlose Abstimmungen</li>
-            <li>Versteckte Kosten</li>
-          </ul>
-        </div>
-        <span class="versus__vs" aria-hidden="true">vs</span>
-        <div class="versus__col versus__col--new">
-          <h3>KapPrompt</h3>
-          <ul>
-            <li>2-5 Tage Lieferzeit</li>
-            <li>Fixe Monatspakete</li>
-            <li>Direkter Ansprechpartner</li>
-            <li>Transparente Preise</li>
-          </ul>
+  <!-- WORLD 3 — PRODUCT CAN (scroll-driven, pinned) -->
+  <section class="sc sc-can" id="produkt" aria-label="Produktobjekt">
+    <div class="sc-pin">
+      <div class="sc-sticky" data-fallback="Für die 3D-Ansicht wird WebGL benötigt — am besten am Desktop.">
+        <canvas id="can-canvas" aria-label="Produktobjekt aus Glas und Metall, das sich beim Scrollen öffnet"></canvas>
+        <div class="sc-overlay">
+          <div class="sc-step" data-start="0" data-end="0.42">
+            <span class="chapter"><span class="num">03</span><span class="bar"></span>Produkt</span>
+            <h2>Ein Objekt, <em>ausgeleuchtet</em> wie im Film.</h2>
+            <p class="lede">Echte Geometrie, Glas und poliertes Metall — geformt vom Licht, nicht von einer Textur.</p>
+          </div>
+          <div class="sc-step" data-start="0.46" data-end="1">
+            <h2>Und es <em>öffnet sich.</em></h2>
+            <p class="lede">Je weiter du scrollst, desto mehr gibt der Deckel den Blick frei — auf das warme Licht, das im Inneren wartet.</p>
+          </div>
         </div>
       </div>
+    </div>
+  </section>
 
-      <!-- stats -->
-      <dl class="stats">
-        <div class="reveal"><dt><span class="count" data-prefix="2–" data-count="5">2–5</span></dt><dd>Tage statt Wochen</dd></div>
-        <div class="reveal" style="--d:.07s"><dt><span class="count" data-count="50" data-suffix="%">50%</span></dt><dd>Günstiger als Agenturen</dd></div>
-        <div class="reveal" style="--d:.14s"><dt><span class="count" data-count="24" data-suffix="/7">24/7</span></dt><dd>KI arbeitet immer</dd></div>
-        <div class="reveal" style="--d:.21s"><dt><span class="count" data-count="100" data-suffix="%">100%</span></dt><dd>Individuell für dich</dd></div>
-      </dl>
-    </section>
-
-    <!-- ====================== PROCESS ====================== -->
-    <section class="section" id="process">
-      <div class="section__head reveal">
-        <p class="eyebrow">So läuft's ab</p>
-        <h2>Von deiner Idee zum fertigen Produkt.<br><span class="dim">In vier Schritten.</span></h2>
+  <!-- WORLD 4 — LIVING ROOM (scroll-driven, pinned) -->
+  <section class="sc sc-room" id="showroom" aria-label="3D-Wohnzimmer">
+    <div class="sc-pin sc-pin-tall">
+      <div class="sc-sticky" data-fallback="Für die 3D-Ansicht wird WebGL benötigt — am besten am Desktop.">
+        <canvas id="room-canvas" aria-label="Warmes, modernes 3D-Wohnzimmer, das sich beim Scrollen aufbaut"></canvas>
+        <div class="sc-overlay sc-overlay-room">
+          <div class="sc-step" data-start="0" data-end="0.4">
+            <span class="chapter"><span class="num">04</span><span class="bar"></span>Zuhause</span>
+            <h2>Ein Raum, <em>der lebt.</em></h2>
+            <p class="lede">Kein leerer Showroom — ein warmes Wohnzimmer aus Holz, Stoff, Glas und weichem Tageslicht.</p>
+          </div>
+          <div class="sc-step" data-start="0.46" data-end="1">
+            <h2>Jedes Stück <em>findet seinen Platz.</em></h2>
+            <p class="lede">Scroll dich hinein: Möbel, Pflanzen und Licht setzen sich, während die Kamera weich durch den Raum gleitet.</p>
+          </div>
+        </div>
       </div>
+    </div>
+  </section>
 
-      <ol class="steps">
-        <li class="reveal">
-          <span class="steps__node" aria-hidden="true"></span>
-          <span class="steps__no">01</span>
-          <h3>Briefing</h3>
-          <p>Du erzählst uns, was du brauchst — per E-Mail, Telefon oder Chat. Wir stellen die richtigen Fragen und verstehen dein Business.</p>
-        </li>
-        <li class="reveal" style="--d:.08s">
-          <span class="steps__node" aria-hidden="true"></span>
-          <span class="steps__no">02</span>
-          <h3>KI-Produktion</h3>
-          <p>Modernste KI-Technologie erstellt deinen Content, deine Dokumente oder Web-Tools — schnell und effizient.</p>
-        </li>
-        <li class="reveal" style="--d:.16s">
-          <span class="steps__node" aria-hidden="true"></span>
-          <span class="steps__no">03</span>
-          <h3>Feinschliff</h3>
-          <p>Jedes Stück wird von Hand geprüft, verfeinert und an deine Marke angepasst. Dein Feedback fliesst direkt ein.</p>
-        </li>
-        <li class="reveal" style="--d:.24s">
-          <span class="steps__node" aria-hidden="true"></span>
-          <span class="steps__no">04</span>
-          <h3>Lieferung</h3>
-          <p>Fertige Dateien, live geschaltete Tools, einsatzbereiter Content — in deinem Format, bereit zum Einsatz.</p>
-        </li>
-      </ol>
-    </section>
-
-    <!-- ====================== PRICING ====================== -->
-    <section class="section" id="pricing">
-      <div class="section__head reveal">
-        <p class="eyebrow">Pakete &amp; Preise</p>
-        <h2>Klare Preise.<br><span class="dim">Kein Kleingedrucktes.</span></h2>
+  <!-- WORLD 5 — FLOATING OBJECTS (scroll-driven, pinned) -->
+  <section class="sc sc-float" id="museum" aria-label="Schwebende Objekte">
+    <div class="sc-pin">
+      <div class="sc-sticky" data-fallback="Für die 3D-Ansicht wird WebGL benötigt — am besten am Desktop.">
+        <canvas id="float-canvas" aria-label="Schwebende 3D-Objekte, die durch den Raum wandern"></canvas>
+        <div class="sc-overlay sc-overlay-right">
+          <div class="sc-step" data-start="0" data-end="0.45">
+            <span class="chapter"><span class="num">05</span><span class="bar"></span>Im Fluss</span>
+            <h2>Alles in <span class="lime">Bewegung.</span></h2>
+            <p class="lede">Karten, Glas, Kugeln und Ringe wandern auf verschiedenen Tiefenebenen — kreuzen sich, ziehen vorbei, kommen nie zur Ruhe.</p>
+          </div>
+          <div class="sc-step" data-start="0.5" data-end="1">
+            <h2>Scroll <span class="lime">zieht sie auseinander.</span></h2>
+            <p class="lede">Je weiter du gehst, desto weiter öffnet sich der Schwarm — ein ruhiger, lebendiger 3D-Fluss statt einer starren Vitrine.</p>
+          </div>
+        </div>
       </div>
+    </div>
+  </section>
 
-      <div class="plans">
-        <article class="plan reveal">
-          <h3>Starter</h3>
-          <p class="plan__price"><b>CHF 490</b><span>pro Monat</span></p>
-          <ul>
-            <li>4 Blogartikel oder Social-Media-Sets</li>
-            <li>SEO-Grundoptimierung</li>
-            <li>1 Revision pro Stück</li>
-            <li>E-Mail-Support</li>
-          </ul>
-          <a href="#contact" class="btn btn--ghost btn--full" data-plan="Starter-Paket (CHF 490/Mt)">Anfragen</a>
+  <!-- WORLD 6 — INTERACTIVE FIGURE (Spline, follows the mouse) -->
+  <section class="sc sc-robot" id="robot" aria-label="Interaktive 3D-Figur">
+    <div class="wrap grid">
+      <div class="copy reveal">
+        <span class="chapter"><span class="num">06</span><span class="bar"></span>Interaktiv</span>
+        <h2>Diese Figur <em>folgt deiner Maus.</em></h2>
+        <p class="lede">Ein 3D-Charakter, der lebt — er schaut sich um und folgt deinem Cursor durch den Raum. Bewege die Maus über die Figur und sie blickt dir nach.</p>
+      </div>
+      <div class="stage reveal">
+        <div class="fb">3D wird geladen …</div>
+        <spline-viewer url="https://prod.spline.design/kZDDjO5HuC9GJUM2/scene.splinecode"></spline-viewer>
+        <span class="cover" aria-hidden="true"></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- WORLD 7 — PERSPECTIVE HIGHLIGHT CARDS -->
+  <section class="sc sc-cards" aria-label="Interaktive Perspektiv-Karten">
+    <div class="wrap">
+      <span class="chapter reveal"><span class="num">07</span><span class="bar"></span>Perspektive</span>
+      <h2 class="reveal">Karten mit <em>Tiefe.</em></h2>
+      <p class="lede reveal">3D-Neigung nach Mausposition, ein Lichtreflex wandert über die Oberfläche, der aktive Rand glüht dezent — der Inhalt bleibt ruhig und lesbar.</p>
+      <div class="deck">
+        <article class="phc reveal">
+          <span class="ix"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l7 4v10l-7 4-7-4V7z"/><path d="M12 3v18"/><path d="M5 7l7 4 7-4"/></svg></span>
+          <span class="kf">Material</span>
+          <h3>Echte Reflexionen</h3>
+          <p>Physikalisch basierte Materialien mit Environment-Light statt aufgemalter Verläufe — Glas reagiert auf das Licht im Raum.</p>
         </article>
-
-        <article class="plan plan--hot reveal" style="--d:.08s">
-          <span class="plan__badge">Am beliebtesten</span>
-          <h3>Business</h3>
-          <p class="plan__price"><b>CHF 990</b><span>pro Monat</span></p>
-          <ul>
-            <li>Alles aus dem Starter-Paket</li>
-            <li>Professionelle Dokumente &amp; Decks</li>
-            <li>Monatliche KI-Beratung (30 Min)</li>
-            <li>Prioritäts-Support</li>
-          </ul>
-          <a href="#contact" class="btn btn--solid btn--full" data-plan="Business-Paket (CHF 990/Mt)">Anfragen</a>
+        <article class="phc reveal">
+          <span class="ix"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M18.4 5.6l-2.1 2.1M7.7 16.3l-2.1 2.1"/></svg></span>
+          <span class="kf">Licht</span>
+          <h3>Flächen &amp; Rim-Light</h3>
+          <p>Area Lights und Rim-Light formen die Kanten der Objekte — kinematisch ausgeleuchtet, ohne harte Schatten.</p>
         </article>
-
-        <article class="plan reveal" style="--d:.16s">
-          <h3>Premium</h3>
-          <p class="plan__price"><b>CHF 1'990</b><span>pro Monat</span></p>
-          <ul>
-            <li>Alles aus dem Business-Paket</li>
-            <li>Massgeschneiderte Web-Tools &amp; Apps</li>
-            <li>Datenanalyse &amp; Dashboards</li>
-            <li>Dedizierter Ansprechpartner</li>
-          </ul>
-          <a href="#contact" class="btn btn--ghost btn--full" data-plan="Premium-Paket (CHF 1'990/Mt)">Anfragen</a>
+        <article class="phc reveal">
+          <span class="ix"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 18l5-9 4 6 3-4 4 7z"/><path d="M3 21h18"/></svg></span>
+          <span class="kf">Motion</span>
+          <h3>Organische Bewegung</h3>
+          <p>Schweben, Kippen, Gleiten und Öffnen — gesteuert aus Scroll-Fortschritt, Mausposition und ruhiger Idle-Motion.</p>
         </article>
       </div>
-      <p class="plans__note reveal">Alle Preise exkl. MwSt. · Monatlich kündbar · Individuelle Projekte auf Anfrage</p>
-    </section>
-
-    <!-- ====================== FAQ ====================== -->
-    <section class="section section--narrow" id="faq">
-      <div class="section__head reveal">
-        <p class="eyebrow">Häufige Fragen</p>
-        <h2>Noch Fragen?</h2>
-      </div>
-
-      <div class="faq reveal">
-        <details>
-          <summary>Wie läuft die Zusammenarbeit genau ab?<span class="faq__icon" aria-hidden="true"></span></summary>
-          <div class="faq__a"><p>Nach deiner Anfrage vereinbaren wir ein kostenloses Erstgespräch. Du erzählst uns von deinem Business, deinen Zielen und was du brauchst. Danach erhältst du von uns ein Angebot — und wenn du zusagst, starten wir direkt. Du bekommst einen festen Ansprechpartner und klare Kommunikation per E-Mail oder WhatsApp.</p></div>
-        </details>
-        <details>
-          <summary>Wer erstellt den Content — du oder die KI?<span class="faq__icon" aria-hidden="true"></span></summary>
-          <div class="faq__a"><p>Beide. Wir nutzen KI als Werkzeug, um schnell hochwertige Entwürfe zu produzieren. Jeder Text, jedes Dokument und jedes Tool wird danach von uns sorgfältig geprüft, angepasst und in deine Markenstimme gebracht. Das Ergebnis ist immer ein handverlesenes Produkt — nur eben deutlich schneller und günstiger.</p></div>
-        </details>
-        <details>
-          <summary>Was passiert, wenn mir etwas nicht gefällt?<span class="faq__icon" aria-hidden="true"></span></summary>
-          <div class="faq__a"><p>Jedes Paket beinhaltet mindestens eine Revision pro Stück. Wir arbeiten so lange mit dir, bis du zufrieden bist. Wir wollen, dass du unsere Arbeit liebst — nicht nur duldest.</p></div>
-        </details>
-        <details>
-          <summary>Wie schnell bekomme ich meine Sachen?<span class="faq__icon" aria-hidden="true"></span></summary>
-          <div class="faq__a"><p>Die meisten Einzelprojekte liefern wir innerhalb von 2–5 Werktagen. Bei monatlichen Paketen gibt es einen festen Produktionsplan, den wir gemeinsam mit dir abstimmen.</p></div>
-        </details>
-        <details>
-          <summary>Kann ich jederzeit kündigen?<span class="faq__icon" aria-hidden="true"></span></summary>
-          <div class="faq__a"><p>Ja. Alle Monatspakete sind monatlich kündbar. Keine Mindestlaufzeit, keine versteckten Klauseln.</p></div>
-        </details>
-        <details>
-          <summary>Arbeitest du auch mit Kunden ausserhalb der Ostschweiz?<span class="faq__icon" aria-hidden="true"></span></summary>
-          <div class="faq__a"><p>Absolut. Wir sitzen im Kanton St. Gallen und arbeiten hauptsächlich digital — das heisst wir können Kunden in der ganzen Schweiz und darüber hinaus bedienen.</p></div>
-        </details>
-      </div>
-    </section>
-
-    <!-- ====================== CONTACT ====================== -->
-    <section class="section" id="contact">
-      <div class="contact">
-        <div class="contact__info reveal">
-          <p class="eyebrow">Kontakt</p>
-          <h2>Bereit für den<br><span class="dim">nächsten Schritt?</span></h2>
-          <p class="section__lead">Schick uns eine Nachricht — wir melden uns innerhalb von 24 Stunden bei dir. Das Erstgespräch ist immer kostenlos.</p>
-          <ul class="contact__facts">
-            <li><span>E-Mail</span><a href="mailto:gian@kapprompt.ch">gian@kapprompt.ch</a></li>
-            <li><span>Standort</span>St. Gallen, Schweiz</li>
-            <li><span>Antwortzeit</span>Innerhalb von 24h</li>
-          </ul>
-        </div>
-
-        <form class="form reveal" id="contactForm" novalidate>
-          <div class="form__grid">
-            <label>Name
-              <input type="text" name="name" autocomplete="name" required>
-            </label>
-            <label>E-Mail
-              <input type="email" name="email" autocomplete="email" required>
-            </label>
-          </div>
-          <label>Firma <small>(optional)</small>
-            <input type="text" name="firma" autocomplete="organization">
-          </label>
-          <label>Interesse an
-            <select name="interesse" id="interestSelect">
-              <option>Noch unsicher — Beratung gewünscht</option>
-              <option>Starter-Paket (CHF 490/Mt)</option>
-              <option>Business-Paket (CHF 990/Mt)</option>
-              <option>Premium-Paket (CHF 1'990/Mt)</option>
-              <option>Einzelprojekt</option>
-            </select>
-          </label>
-          <label>Nachricht
-            <textarea name="nachricht" rows="5" required></textarea>
-          </label>
-          <button type="submit" class="btn btn--solid btn--full" id="submitBtn">Nachricht senden</button>
-          <p class="form__note">Wir antworten innerhalb von 24h. Deine Daten werden vertraulich behandelt.</p>
-
-          <div class="form__success" id="formSuccess" hidden>
-            <h3>Nachricht gesendet!</h3>
-            <p>Danke für deine Anfrage. Wir melden uns innerhalb von 24 Stunden bei dir.</p>
-          </div>
-        </form>
-      </div>
-    </section>
-
-    <!-- ====================== BRANDMARK ====================== -->
-    <section class="brandmark" aria-label="KapPrompt">
-      <img class="brandmark__logo reveal" src="logo-full.png" alt="KapPrompt" loading="lazy">
-    </section>
-
-  </main>
-
-  <!-- ====================== FOOTER ====================== -->
-  <footer class="footer">
-    <div class="footer__inner">
-      <div class="footer__brand">
-        <a href="#top" class="nav__brand"><img src="logo-small.png" alt="" width="30" height="31"><span>Kap<em>Prompt</em></span></a>
-        <p>KI-gestützte Lösungen für Content, Dokumente und Web-Tools. Für KMUs in der Ostschweiz und darüber hinaus.</p>
-      </div>
-      <nav aria-label="Services">
-        <h4>Services</h4>
-        <a href="#services">Content &amp; Texte</a>
-        <a href="#services">Dokumente &amp; Decks</a>
-        <a href="#services">Web-Tools &amp; Apps</a>
-        <a href="#services">KI-Beratung</a>
-      </nav>
-      <nav aria-label="Unternehmen">
-        <h4>Unternehmen</h4>
-        <a href="#process">So läuft's ab</a>
-        <a href="#pricing">Pakete &amp; Preise</a>
-        <a href="impressum.html">Impressum</a>
-        <a href="datenschutz.html">Datenschutz</a>
-      </nav>
-      <nav aria-label="Kontakt">
-        <h4>Kontakt</h4>
-        <a href="mailto:gian@kapprompt.ch">gian@kapprompt.ch</a>
-        <a href="#contact">Anfrage senden</a>
-        <span>Kanton St. Gallen, Schweiz</span>
-      </nav>
     </div>
-    <div class="footer__base">
-      <span>© 2026 KapPrompt — Ein Projekt von Gian Kappeler</span>
-      <span><a href="impressum.html">Impressum</a> · <a href="datenschutz.html">Datenschutz</a></span>
-    </div>
-  </footer>
+  </section>
 
-  <script src="script.js"></script>
+  <!-- WORLD 4 — CINEMA (serif, achromatic) -->
+  <section class="cinema-intro" id="kino" aria-label="Kino">
+    <div class="wrap">
+      <span class="chapter reveal"><span class="num">08</span><span class="bar"></span>Kino</span>
+      <h2 class="reveal">Aus Pixeln wird <em>Kino.</em></h2>
+      <p class="lede reveal">Scroll weiter — und übernimm die Regie. Jeder Frame folgt deiner Bewegung.</p>
+    </div>
+  </section>
+  <section class="scrub" aria-label="Kinematische Bildsequenz beim Scrollen">
+    <div class="scrub-sticky">
+      <h2 class="scrub-title top">Kino</h2>
+      <div class="scrub-card">
+        <canvas id="scrub-canvas" aria-label="Fahrzeugsequenz, gesteuert durch Scrollen"></canvas>
+        <div class="vig" aria-hidden="true"></div>
+        <div class="scrub-loader">Sequenz wird geladen …</div>
+      </div>
+      <p class="scrub-title bottom" aria-hidden="true">Realität</p>
+    </div>
+  </section>
+  <p class="cinema-cap reveal">Gesteuert allein durch dein Scrollen.</p>
+
+  <!-- WORLD 5 — QUIET close -->
+  <section class="quiet" aria-label="Abschluss">
+    <div class="wrap">
+      <span class="chapter reveal"><span class="num">09</span><span class="bar"></span>Ende der Reise</span>
+      <h2 class="reveal">Und das ist erst <b>der Anfang.</b></h2>
+    </div>
+  </section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="top">
+      <div class="fb"><img src="assets/img/logo.png" alt="Kapprompt"><span class="nm">Kap<span class="p">prompt</span></span></div>
+    </div>
+    <div class="legal">
+      <div>
+        <h4>Datenschutz</h4>
+        <p>Diese Seite setzt keine Cookies und nutzt keine Tracking- oder Analyse-Tools. Schriften und Bilder sind lokal eingebunden.</p>
+        <p>Die 3D-Szenen werden lokal im Browser gerendert; dafür wird die Open-Source-Bibliothek Three.js von einem öffentlichen CDN (jsDelivr) nachgeladen. Für die interaktive 3D-Figur wird zusätzlich eine Komponente von Spline (spline.design) nachgeladen. Dabei kann deine IP-Adresse an die jeweiligen Server übermittelt werden.</p>
+        <p>Kontakt: <a href="mailto:mail@gian-kappeler.ch">mail@gian-kappeler.ch</a></p>
+      </div>
+      <div>
+        <h4>Hinweis</h4>
+        <p>Diese Seite dient ausschliesslich Anschauungszwecken — als Schaufenster aktueller KI-Fähigkeiten. Keine Gewähr für die Vollständigkeit der Angaben.</p>
+        <p>Die 3D-Szenen (Produkt, Wohnzimmer, schwebende Objekte, Perspektiv-Karten) sind eigens mit Three.js gebaut. Die interaktive 3D-Figur und die Fahrzeugsequenz stammen aus öffentlichen Demos Dritter; Marken- und Bildrechte verbleiben bei den jeweiligen Inhabern.</p>
+      </div>
+    </div>
+    <div class="copy">© 2026 <b>Kapprompt</b> · Ein Projekt von Gian Kappeler · <a href="mailto:mail@gian-kappeler.ch">mail@gian-kappeler.ch</a> · <a href="impressum.html">Impressum</a> · <a href="datenschutz.html">Datenschutz</a></div>
+  </div>
+</footer>
+
+<script src="assets/js/main.js?v=3" defer></script>
+<script type="module" src="assets/js/showcase/index.js"></script>
 </body>
 </html>
